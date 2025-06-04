@@ -1,0 +1,151 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.and {
+    font-weight: 400;
+    margin: 0 0.5rem;
+}
+
+.integrations {
+    color: #3c42c9;
+}
+
+.marquee-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+    margin-bottom: 3rem;
+}
+
+    .marquee-track.reverse {
+        animation: marquee-reverse 40s linear infinite;
+    }
+
+.marquee-content {
+    display: flex;
+    align-items: center;
+}
+
+.logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 3rem;
+    transition: all 0.3s ease;
+}
+
+    .logo-item img {
+        height: 60px;
+        width: auto;
+        max-width: 180px;
+        object-fit: contain;
+        filter: grayscale(100%);
+        opacity: 0.7;
+        transition: all 0.3s ease;
+        margin-bottom: 0.5rem;
+    }
+
+    .logo-item span {
+        font-size: 0.85rem;
+        font-weight: 500;
+        opacity: 0.7;
+        transition: all 0.3s ease;
+    }
+
+    .logo-item:hover img {
+        filter: grayscale(0%);
+        opacity: 1;
+    }
+
+    .logo-item:hover span {
+        opacity: 1;
+        color: #3c42c9;
+    }
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes marquee-reverse {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .logo-item {
+        margin: 0 2rem;
+    }
+
+        .logo-item img {
+            height: 50px;
+            max-width: 150px;
+        }
+
+        .logo-item span {
+            font-size: 0.75rem;
+        }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .logo-item {
+        margin: 0 1.5rem;
+    }
+
+        .logo-item img {
+            height: 40px;
+            max-width: 120px;
+        }
+
+        .logo-item span {
+            font-size: 0.7rem;
+        }
+}

@@ -1,0 +1,808 @@
+﻿/* Theme-aware adminAnnouncements.css - Matching Register Design Patterns */
+
+/* Dashboard container */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 280px;
+    background-color: var(--card-bg-color);
+    box-shadow: 0px 0px 15px var(--shadow-color);
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.sidebar-header {
+    padding: 25px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+    .sidebar-header h3 {
+        color: var(--light-purple);
+        margin: 0;
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+
+.sidebar-menu {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+/* New Button Styles */
+.cssbuttons-io {
+    position: relative;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    border-radius: 0.8em;
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    color: ghostwhite;
+    overflow: hidden;
+    width: 90%;
+    text-decoration: none;
+    display: block;
+}
+
+    .cssbuttons-io svg {
+        width: 1.2em;
+        height: 1.2em;
+        margin-right: 0.5em;
+    }
+
+    .cssbuttons-io span {
+        position: relative;
+        z-index: 10;
+        transition: color 0.4s;
+        display: inline-flex;
+        align-items: center;
+        padding: 0.8em 1.2em 0.8em 1.05em;
+    }
+
+    .cssbuttons-io::before,
+    .cssbuttons-io::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .cssbuttons-io::before {
+        content: "";
+        background: #000;
+        width: 120%;
+        left: -10%;
+        transform: skew(30deg);
+        transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    }
+
+    .cssbuttons-io:hover::before {
+        transform: translate3d(100%, 0, 0);
+    }
+
+    .cssbuttons-io:active {
+        transform: scale(0.95);
+    }
+
+    .cssbuttons-io.active {
+        background: linear-gradient(to right, #b366ff, #7733ff);
+        box-shadow: 0 0 15px rgba(142, 45, 226, 0.6);
+    }
+
+        .cssbuttons-io.active::before {
+            background: #000;
+            transform: translate3d(100%, 0, 0);
+        }
+
+/* Content Area */
+.content-area {
+    flex: 1;
+    margin-left: 280px;
+    padding: 20px 30px;
+    background-color: var(--bg-color);
+    transition: all var(--transition-time) ease;
+}
+
+/* Top Navigation */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.top-nav-actions {
+    display: flex;
+    align-items: center;
+}
+
+.admin-info {
+    display: flex;
+    align-items: center;
+}
+
+.admin-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--light-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-right: 12px;
+    font-weight: 600;
+}
+
+.admin-name {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.admin-role {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Announcements Styles */
+.section-description {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+/* Message styling matching register pattern */
+.message-label {
+    display: block;
+    margin: 15px 0;
+    padding: 12px 15px;
+    border-radius: 6px;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid;
+    font-size: 0.95rem;
+}
+
+.message-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.message-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+/* Dark mode message styling */
+[data-theme="dark"] .message-success {
+    background-color: rgba(40, 167, 69, 0.2);
+    color: #9fdf9f;
+    border-color: rgba(40, 167, 69, 0.3);
+}
+
+[data-theme="dark"] .message-error {
+    background-color: rgba(220, 53, 69, 0.2);
+    color: #f5a9a9;
+    border-color: rgba(220, 53, 69, 0.3);
+}
+
+/* Tab Navigation */
+.nav-tabs {
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 25px;
+}
+
+    .nav-tabs .nav-link {
+        border: none;
+        color: var(--text-color);
+        font-weight: 500;
+        padding: 12px 20px;
+        margin-right: 5px;
+        border-radius: 0;
+        transition: all 0.3s ease;
+    }
+
+        .nav-tabs .nav-link:hover {
+            background-color: var(--hover-bg);
+            border-bottom: 2px solid var(--hover-bg);
+        }
+
+        .nav-tabs .nav-link.active {
+            background-color: transparent;
+            border-bottom: 2px solid var(--light-purple);
+            color: var(--light-purple);
+        }
+
+/* Form Container */
+.announcement-form-container {
+    background-color: var(--card-bg-color);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0px 0px 15px var(--shadow-color);
+    margin-bottom: 30px;
+}
+
+.announcement-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.announcement-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+}
+
+/* Form elements - matching register pattern */
+.form-label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    display: block;
+}
+
+.form-control {
+    padding: 12px 15px;
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    width: 100%;
+    font-size: 0.95rem;
+}
+
+    .form-control:focus {
+        outline: none;
+        border-color: var(--input-focus-border);
+        box-shadow: 0 0 0 3px rgba(154, 123, 206, 0.25);
+        background-color: var(--input-bg);
+    }
+
+    .form-control.is-invalid {
+        border-color: #dc3545;
+        box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
+    }
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    line-height: 1.5;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+/* Force all inputs and selects to use theme colors */
+input, select, textarea, button {
+    background-color: var(--input-bg) !important;
+    color: var(--input-text) !important;
+    border-color: var(--input-border) !important;
+    transition: all 0.3s ease;
+}
+
+    input:focus, select:focus, textarea:focus {
+        border-color: var(--input-focus-border) !important;
+        box-shadow: 0 0 0 3px rgba(154, 123, 206, 0.25) !important;
+    }
+
+    /* Fix for search placeholder text to ensure it's visible */
+    input::placeholder, textarea::placeholder {
+        color: var(--text-muted) !important;
+        opacity: 0.7;
+    }
+
+/* Validation error styling matching register pattern */
+.validation-error {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 5px;
+    display: block;
+    font-weight: 500;
+}
+
+[data-theme="dark"] .validation-error {
+    color: #f5a9a9;
+}
+
+/* Validation Summary styling */
+.validation-summary {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+    .validation-summary ul {
+        margin: 10px 0 0 0;
+        padding-left: 20px;
+    }
+
+    .validation-summary li {
+        margin-bottom: 5px;
+    }
+
+[data-theme="dark"] .validation-summary {
+    background-color: rgba(220, 53, 69, 0.2);
+    color: #f5a9a9;
+    border-color: rgba(220, 53, 69, 0.3);
+}
+
+/* Form text helpers */
+.form-text {
+    font-size: 0.875rem;
+    margin-top: 5px;
+    display: block;
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+.text-warning {
+    color: #ffc107 !important;
+}
+
+.text-danger {
+    color: #dc3545 !important;
+}
+
+[data-theme="dark"] .text-warning {
+    color: #ffda6a !important;
+}
+
+[data-theme="dark"] .text-danger {
+    color: #f5a9a9 !important;
+}
+
+/* Character counter */
+.char-counter {
+    float: right;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+/* Action Buttons for Create Announcement */
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+/* Updated History Table - Matching Courses Design Exactly */
+.history-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+    /* Table Headers - Dark background like courses */
+    .history-table th {
+        background-color: var(--table-header-bg, #f8f9fa);
+        color: var(--text-color);
+        font-weight: 600;
+        padding: 15px;
+        text-align: left;
+        border-bottom: 2px solid var(--border-color);
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* Table Cells - Clean spacing like courses */
+    .history-table td {
+        padding: 15px;
+        border-bottom: 1px solid var(--border-color);
+        vertical-align: middle;
+        color: var(--text-color);
+        font-size: 0.95rem;
+    }
+
+    /* Hover effect matching courses */
+    .history-table tr:hover {
+        background-color: var(--table-row-hover);
+        transition: background-color 0.2s ease;
+    }
+
+    .history-table tr:last-child td {
+        border-bottom: none;
+    }
+
+/* Dark Mode Table Enhancements - Darker header */
+[data-theme="dark"] .history-table th {
+    background-color: #0d1117;
+}
+
+[data-theme="dark"] .history-table tr:hover {
+    background-color: rgba(154, 123, 206, 0.1);
+}
+
+/* Make header even darker for both themes */
+.history-table th {
+    background-color: #161b22;
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid var(--border-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Table Content Styling */
+.announcement-title-cell {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.target-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background-color: rgba(154, 123, 206, 0.1);
+    color: var(--light-purple);
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(154, 123, 206, 0.2);
+}
+
+.time-cell {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.admin-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background-color: var(--light-purple);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(154, 123, 206, 0.3);
+}
+
+/* Action Buttons Enhanced - exactly matching courses page */
+.actions-cell {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.action-button {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+    .action-button i {
+        font-size: 1rem;
+    }
+
+/* View Button (Blue) */
+.action-view {
+    color: #17a2b8;
+}
+
+    .action-view:hover {
+        background-color: rgba(23, 162, 184, 0.1);
+        border-color: #17a2b8;
+    }
+
+/* Delete Button (Red) */
+.action-delete {
+    color: #dc3545;
+}
+
+    .action-delete:hover {
+        background-color: rgba(220, 53, 69, 0.1);
+        border-color: #dc3545;
+    }
+
+/* Buttons for Create Form */
+.btn-draft {
+    background-color: var(--card-bg-color) !important;
+    color: var(--text-color) !important;
+    border: 1px solid var(--border-color) !important;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+    .btn-draft:hover {
+        background-color: var(--hover-bg) !important;
+    }
+
+.btn-send {
+    background-color: var(--light-purple) !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+    .btn-send:hover {
+        background-color: var(--lighter-purple) !important;
+    }
+
+/* Empty Data Style */
+.empty-data {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-muted);
+}
+
+    .empty-data i {
+        margin-bottom: 20px;
+        opacity: 0.3;
+    }
+
+    .empty-data p {
+        font-size: 1.1rem;
+        margin: 0;
+    }
+
+/* Dark mode specific fixes */
+html[data-theme="dark"] input[type="text"],
+html[data-theme="dark"] input[type="search"],
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea {
+    background-color: #2a2d31 !important;
+    color: #E9ECEF !important;
+}
+
+html[data-theme="dark"] .announcement-form-container {
+    background-color: #2a2d31;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme="dark"] .btn-draft {
+    background-color: #2a2d31 !important;
+    color: #E9ECEF !important;
+    border-color: #3a3d41 !important;
+}
+
+html[data-theme="dark"] .btn-send {
+    background-color: #9A7BCE !important;
+    color: white !important;
+}
+
+html[data-theme="dark"] .target-badge {
+    background-color: rgba(154, 123, 206, 0.3);
+    color: #c6b4e8;
+    border-color: rgba(154, 123, 206, 0.4);
+}
+
+html[data-theme="dark"] .nav-tabs {
+    border-bottom-color: #3a3d41;
+}
+
+    html[data-theme="dark"] .nav-tabs .nav-link {
+        color: #E9ECEF;
+    }
+
+        html[data-theme="dark"] .nav-tabs .nav-link:hover {
+            background-color: #3a3d41;
+            border-bottom-color: #3a3d41;
+        }
+
+        html[data-theme="dark"] .nav-tabs .nav-link.active {
+            color: #9A7BCE;
+            border-bottom-color: #9A7BCE;
+        }
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 80px;
+    }
+
+    .content-area {
+        margin-left: 80px;
+    }
+
+    .cssbuttons-io {
+        width: 60px;
+    }
+
+        .cssbuttons-io span {
+            padding: 0.8em;
+            justify-content: center;
+        }
+
+        .cssbuttons-io svg {
+            margin-right: 0;
+        }
+
+        .cssbuttons-io span span {
+            display: none;
+        }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn-draft, .btn-send {
+        width: 100%;
+    }
+
+    .history-table thead {
+        display: none;
+    }
+
+    .history-table, .history-table tbody, .history-table tr, .history-table td {
+        display: block;
+        width: 100%;
+    }
+
+        .history-table tr {
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+            .history-table tr:last-child {
+                margin-bottom: 0;
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+
+        .history-table td {
+            border-bottom: none;
+            padding: 8px 0;
+            text-align: left;
+            position: relative;
+        }
+
+    .actions-cell {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .message-label {
+        text-align: left;
+        font-size: 0.9rem;
+    }
+}
+
+/* Sidebar button fixes - ensure consistent styling */
+body .sidebar-menu .cssbuttons-io span,
+.sidebar-menu .cssbuttons-io span,
+.cssbuttons-io span {
+    color: white !important;
+}
+
+.cssbuttons-io svg,
+.cssbuttons-io svg path {
+    color: white !important;
+    fill: white !important;
+}
+
+.cssbuttons-io {
+    background: linear-gradient(to right, #8e2de2, #4a00e0) !important;
+}
+
+    .cssbuttons-io.active {
+        background: linear-gradient(to right, #b366ff, #7733ff) !important;
+    }
+
+/* Additional form enhancements matching register pattern */
+.required-asterisk {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.form-help-text {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Loading state for buttons */
+.btn-loading {
+    position: relative;
+    color: transparent !important;
+}
+
+    .btn-loading::after {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        border: 2px solid transparent;
+        border-top-color: #ffffff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Focus indicators for accessibility */
+.form-control:focus,
+.btn:focus,
+.action-button:focus {
+    outline: 2px solid var(--light-purple);
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    .sidebar,
+    .action-buttons,
+    .actions-cell {
+        display: none;
+    }
+
+    .content-area {
+        margin-left: 0;
+    }
+}

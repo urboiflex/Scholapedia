@@ -1,0 +1,2780 @@
+﻿/* =======================
+   Scholapedia Course Page
+   ======================= */
+
+/* --- NAVIGATION BAR STYLING --- */
+
+/* =======================
+   Scholapedia Course Page
+   ======================= */
+
+/* --- NAVIGATION BAR STYLING --- */
+/* =======================
+   Scholapedia Course Page
+   ======================= */
+
+/* --- NAVIGATION BAR STYLING --- */
+
+/* =======================
+   Scholapedia Course Page
+   ======================= */
+
+/* --- NAVIGATION BAR STYLING --- */
+
+/* ...existing code... */
+
+/* Modal Styles for Class Details */
+.class-modal {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    animation: fadeInModal 0.3s ease-out;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideInModal 0.4s ease-out;
+    position: relative;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #3c40c1 0%, #5b67ea 100%);
+    color: white;
+    padding: 20px 30px;
+    border-radius: 16px 16px 0 0;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .modal-header h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+        font-family: 'Nunito', sans-serif;
+    }
+
+.close-modal {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    line-height: 1;
+    margin-left: 20px;
+}
+
+    .close-modal:hover {
+        color: #ffdddd;
+        transform: scale(1.1);
+    }
+
+.modal-body {
+    padding: 30px;
+    background: #fafcff;
+    border-radius: 0 0 16px 16px;
+}
+
+.class-details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.class-item {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(60, 64, 193, 0.08);
+    border: 1px solid #e3e7fa;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .class-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(60, 64, 193, 0.15);
+    }
+
+.class-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.course-name {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+    font-family: 'Nunito', sans-serif;
+}
+
+.module-type {
+    background-color: #3c40c1;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.class-info {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.time-info,
+.schedule-id {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+    .time-info i,
+    .schedule-id i {
+        color: #3c40c1;
+        font-size: 1rem;
+    }
+
+/* Clickable calendar date styling */
+.clickable-date {
+    transition: all 0.3s ease;
+    border-radius: 8px !important;
+}
+
+    .clickable-date:hover {
+        background-color: #5b67ea !important;
+        transform: scale(1.1);
+        box-shadow: 0 4px 12px rgba(60, 64, 193, 0.3);
+    }
+
+/* Modal animations */
+@keyframes fadeInModal {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInModal {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Dark mode styles for modal */
+body.dark-mode .modal-content {
+    background-color: #23263a;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode .modal-header {
+    background: linear-gradient(135deg, #59bbff 0%, #3c40c1 100%);
+    color: #23263a;
+}
+
+    body.dark-mode .modal-header h2 {
+        color: #23263a;
+    }
+
+body.dark-mode .close-modal {
+    color: #23263a;
+}
+
+    body.dark-mode .close-modal:hover {
+        color: #181a22;
+    }
+
+body.dark-mode .modal-body {
+    background: #181a22;
+}
+
+body.dark-mode .class-item {
+    background: #23263a;
+    border: 1px solid #44486a;
+    box-shadow: 0 4px 12px rgba(89, 187, 255, 0.08);
+}
+
+    body.dark-mode .class-item:hover {
+        box-shadow: 0 8px 25px rgba(89, 187, 255, 0.15);
+    }
+
+body.dark-mode .course-name {
+    color: #e9e9f3;
+}
+
+body.dark-mode .time-info,
+body.dark-mode .schedule-id {
+    color: #b8c5ef;
+}
+
+    body.dark-mode .time-info i,
+    body.dark-mode .schedule-id i {
+        color: #59bbff;
+    }
+
+body.dark-mode .module-type {
+    background-color: #59bbff;
+    color: #23263a;
+}
+
+/* Responsive design for modal */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        max-height: 85vh;
+    }
+
+    .modal-header {
+        padding: 15px 20px;
+    }
+
+        .modal-header h2 {
+            font-size: 1.25rem;
+        }
+
+    .modal-body {
+        padding: 20px;
+    }
+
+    .class-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .class-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .course-name {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 98%;
+        margin: 15% auto;
+    }
+
+    .modal-header {
+        padding: 12px 15px;
+    }
+
+    .modal-body {
+        padding: 15px;
+    }
+
+    .class-item {
+        padding: 15px;
+    }
+}
+
+/* Settings & Hamburger */
+.settings-icon, .theme-toggle-icon {
+    font-size: 22px;
+    color: #3c40c1;
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s;
+    position: relative;
+    background: transparent !important;
+    margin-left: 7px;
+}
+
+    /* Prevent color change on click/focus/active */
+    .settings-icon:active,
+    .settings-icon:focus,
+    .settings-icon:visited,
+    .settings-icon.open, /* if you use a JS class for open state */
+    body.dark-mode .settings-icon:active,
+    body.dark-mode .settings-icon:focus,
+    body.dark-mode .settings-icon:visited,
+    body.dark-mode .settings-icon.open {
+        color: #3c40c1 !important;
+    }
+
+
+/* Settings Dropdown */
+.dropdown-settings {
+    display: none;
+    position: absolute;
+    top: 34px;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #e3e7fa;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.13);
+    padding: 6px 0;
+    width: 128px;
+    animation: fadeIn 0.3s;
+    z-index: 1600;
+}
+
+    /* Make profile link in dropdown vertical with icon above text */
+    .dropdown-settings a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 0 4px 0;
+        font-size: 15px;
+        color: #333;
+        text-decoration: none;
+        gap: 5px;
+        border-radius: 4px;
+        transition: background 0.16s, color 0.18s;
+    }
+
+        .dropdown-settings a i {
+            font-size: 1.4em;
+            margin-bottom: 2px;
+        }
+
+        .dropdown-settings a:hover {
+            background-color: #f0f0f0;
+            color: #3c40c1;
+        }
+
+        /* For the logout link, keep icon and text side by side */
+        .dropdown-settings a:last-child {
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 8px 16px;
+            gap: 8px;
+            font-size: 15px;
+        }
+
+/* Dark mode for dropdown */
+body.dark-mode .dropdown-settings {
+    background: #23263a;
+    border: 1.5px solid #313357;
+    box-shadow: 0 6px 18px rgba(30, 41, 98, 0.18);
+}
+
+    body.dark-mode .dropdown-settings a {
+        color: #e0e6fa;
+        background: none;
+    }
+
+        body.dark-mode .dropdown-settings a:hover {
+            background-color: #353863;
+            color: #3c40c1;
+        }
+
+/* ...rest of your CSS unchanged... */
+
+/* Add this new selector for your custom navigation bar */
+.navbar-encapsulate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 62px;
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2000;
+    background: rgba(255,255,255,0.97);
+    box-shadow: 0 2px 12px rgba(60,64,193,0.09);
+    border-bottom: 1px solid #e3e7fa;
+    transition: background 0.4s cubic-bezier(.4,0,.2,1), box-shadow 0.3s, border-bottom 0.3s;
+}
+
+/* DARK MODE for navbar - remove bottom border */
+body.dark-mode .navbar-encapsulate {
+    background: rgba(24,26,34,0.97) !important;
+    box-shadow: 0 2px 12px #000a !important;
+    border-bottom: none !important;
+}
+/* Existing settings-container styles ... (unchanged) */
+
+/* ... rest of your CSS is unchanged ... */
+
+.settings-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 62px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 25px;
+    background: rgba(255,255,255,0.97); /* Default: nearly solid */
+    box-shadow: 0 2px 12px rgba(60,64,193,0.09);
+    border-bottom: 1px solid #e3e7fa;
+    z-index: 1200;
+    padding-right: 36px;
+    padding-left: 0;
+    transition: background 0.4s cubic-bezier(.4,0,.2,1), box-shadow 0.3s;
+}
+
+
+body.dark-mode .settings-container {
+    background: rgba(24,26,34,0.97) !important;
+    box-shadow: 0 2px 12px #000a !important;
+    border-bottom: 1px solid #23263a;
+}
+.settings-container.scrolled {
+    background: rgba(255,255,255,0.7);
+    box-shadow: 0 6px 30px rgba(60,64,193,0.09), 0 1.5px 12px #0002;
+    backdrop-filter: blur(7px);
+}
+
+body.dark-mode .settings-container.scrolled {
+    background: rgba(24,26,34,0.72) !important;
+    box-shadow: 0 6px 30px #23263a33, 0 1.5px 12px #000b !important;
+    backdrop-filter: blur(9px);
+}
+
+/* Logo bar (floated left) */
+.logo-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 62px;
+    display: flex !important;
+    align-items: center !important;
+    gap: 18px !important;
+    margin: 0 0 0 36px;
+    z-index: 1300;
+    background: transparent;
+    pointer-events: all;
+}
+
+@media (max-width: 900px) {
+    .logo-bar {
+        height: 44px;
+        margin-left: 14px;
+        gap: 7px;
+    }
+}
+.scholapedia-logo {
+    height: 44px;
+    max-width: 126px;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 7px;
+    object-fit: contain;
+    background: transparent;
+    
+}
+
+/* Only apply a *very* subtle filter in dark mode if you want, or none at all */
+body.dark-mode .scholapedia-logo {
+    
+    background: transparent !important;
+}
+
+/* Ghost mascot */
+.ghost-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    width: 44px;
+    min-width: 36px;
+    min-height: 36px;
+    max-width: 52px;
+    max-height: 52px;
+    background: transparent;
+}
+
+    .ghost-container #ghost {
+        transform: scale(0.66);
+        transform-origin: center;
+        width: 52px;
+        height: 52px;
+        display: block;
+    }
+
+@media (max-width: 600px) {
+    .scholapedia-logo {
+        height: 28px;
+        max-width: 80px;
+    }
+
+    .ghost-container {
+        height: 28px;
+        width: 28px;
+        max-width: 32px;
+        max-height: 32px;
+    }
+
+        .ghost-container #ghost {
+            transform: scale(0.5);
+        }
+
+    .logo-bar {
+        height: 32px;
+        margin-left: 6px;
+    }
+
+    .settings-container {
+        height: 34px;
+    }
+}
+/* User Profile in Nav */
+#userNavBarProfile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 16px;
+    background: transparent;
+    border-radius: 20px;
+    min-height: 42px;
+}
+
+#navbarProfilePic {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e3e7fa;
+    background: #f9f9fb;
+    transition: border 0.2s;
+}
+
+body.dark-mode #navbarProfilePic {
+    border: 2px solid #313357;
+    background: #23263a;
+}
+
+#navbarFirstName {
+    font-family: 'Nunito', 'Jost', 'Segoe UI', Arial, sans-serif;
+    letter-spacing: 1.2px;
+    font-weight: 700;
+    font-size: 1.09rem;
+    color: #3c40c1;
+    background: linear-gradient(90deg, #3c40c1 40%, #6658ea 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    padding-left: 2px;
+    transition: color 0.3s;
+}
+
+body.dark-mode #navbarFirstName {
+    color: #3c40c1;
+    background: none;
+    -webkit-text-fill-color: #3c40c1;
+    text-fill-color: #3c40c1;
+}
+
+/* Settings & Hamburger */
+/* Settings & Hamburger */
+.settings-icon, .theme-toggle-icon {
+    font-size: 22px;
+    color: #3c40c1;
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s;
+    position: relative;
+    background: transparent !important;
+    margin-left: 7px;
+}
+
+    .settings-icon:active,
+    .settings-icon:focus,
+    .settings-icon:visited,
+    .settings-icon.open, /* if you use a JS class for open state */
+    body.dark-mode .settings-icon:active,
+    body.dark-mode .settings-icon:focus,
+    body.dark-mode .settings-icon:visited,
+    body.dark-mode .settings-icon.open {
+        color: #3c40c1 !important;
+    }
+
+
+    .settings-icon:hover, .theme-toggle-icon:hover {
+        color: #3c40c1;
+        transform: scale(1.18);
+    }
+
+body.dark-mode .settings-icon, body.dark-mode .theme-toggle-icon {
+    color: #3c40c1;
+}
+
+    body.dark-mode .settings-icon:hover, body.dark-mode .theme-toggle-icon:hover {
+        color: #fff;
+    }
+
+/* Settings Dropdown */
+.dropdown-settings {
+    display: none;
+    position: absolute;
+    top: 34px;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #e3e7fa;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.13);
+    padding: 6px 0;
+    width: 128px;
+    animation: fadeIn 0.3s;
+    z-index: 1600;
+}
+
+    .dropdown-settings a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 0 4px 0;
+        font-size: 15px;
+        color: #333;
+        text-decoration: none;
+        gap: 5px;
+        border-radius: 4px;
+        transition: background 0.16s, color 0.18s;
+    }
+
+        .dropdown-settings a:hover {
+            background-color: #f0f0f0;
+            color: #3c40c1;
+        }
+
+body.dark-mode .dropdown-settings {
+    background: #23263a;
+    border: 1.5px solid #313357;
+    box-shadow: 0 6px 18px rgba(30, 41, 98, 0.18);
+}
+
+    body.dark-mode .dropdown-settings a {
+        color: #e0e6fa;
+        background: none;
+    }
+
+        body.dark-mode .dropdown-settings a:hover {
+            background-color: #353863;
+            color: #3c40c1;
+        }
+
+/* Hamburger Menu */
+.hamburger-menu {
+    position: relative;
+    width: 28px;
+    height: 24px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1400;
+    margin-top: 3px;
+    margin-left: 8px;
+}
+
+.hamburger-line {
+    height: 3px;
+    width: 100%;
+    background-color: #3c40c1;
+    border-radius: 2px;
+    transition: all 0.4s;
+}
+
+.hamburger-menu.active .line1 {
+    transform: rotate(45deg) translate(6px, 7px);
+}
+
+.hamburger-menu.active .line2 {
+    opacity: 0;
+}
+
+.hamburger-menu.active .line3 {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+body.dark-mode .hamburger-line {
+    background-color: #3c40c1;
+}
+
+/* Hamburger Dropdown */
+.dropdown-menu {
+    position: absolute;
+    top: 36px;
+    right: 0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(60,64,193,0.10);
+    display: none;
+    flex-direction: column;
+    padding: 12px 0;
+    min-width: 175px;
+    z-index: 1700;
+    animation: fadeIn 0.3s;
+}
+
+    .dropdown-menu a {
+        display: flex;
+        align-items: center;
+        padding: 12px 22px;
+        color: #3c40c1;
+        text-decoration: none;
+        font-weight: 600;
+        gap: 14px;
+        font-size: 1.08rem;
+        border-radius: 6px;
+        transition: background 0.2s, color 0.18s, transform 0.2s;
+    }
+
+        .dropdown-menu a:hover {
+            background-color: #edefff;
+            color: #3c40c1;
+            transform: translateX(6px);
+        }
+
+    .dropdown-menu i {
+        font-size: 18px;
+        animation: bounce 1.5s infinite;
+        color: inherit;
+    }
+
+body.dark-mode .dropdown-menu {
+    background: #23263a;
+    box-shadow: 0 8px 30px #23263a33;
+    border: 1.5px solid #313357;
+}
+
+    body.dark-mode .dropdown-menu a {
+        color: #e0e6fa;
+        background: none;
+    }
+
+        body.dark-mode .dropdown-menu a:hover {
+            background: #353863;
+            color: #3c40c1;
+        }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+/* --- END NAVIGATION BAR STYLING --- */
+
+/* ... [REMAINDER OF YOUR COURSE CSS GOES HERE] ... */
+
+
+
+
+
+
+
+
+
+
+
+.header-main-flex {
+    width: 100vw;
+    min-height: 420px;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+    background: #fafcff;
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
+    padding-top: 60px;
+}
+
+.welcome-box-container {
+    border-radius: 14px;
+    padding: 40px 30px 30px 40px;
+    border: 2.2px solid #007BFF;
+    width: 580px;
+    min-width: 320px;
+    max-width: 650px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    margin-top: 30px;
+    height: 320px;
+    background: transparent !important;
+    box-shadow: none !important;
+    display: flex;
+    align-items: flex-start;
+}
+
+.welcome-box {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 2;
+    background: transparent !important;
+    padding: 24px 0 0 0;
+    border-radius: 0;
+    box-shadow: none;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.typing-container {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #007bff;
+    animation: typing 2.7s steps(20, end), blink 0.8s step-end infinite;
+    font-size: 2.3rem;
+    font-weight: 700;
+    font-family: 'Nunito', 'Segoe UI', Arial, sans-serif;
+    color: #191970;
+    max-width: 100%;
+    letter-spacing: 1.1px;
+    background: transparent !important;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+/* Particle animation (darker color) */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    background-color: #1b2c5e;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float infinite alternate ease-in-out;
+    z-index: 0;
+    box-shadow: 0 0 7px rgba(27,44,94,0.22);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0) scale(1);
+    }
+
+    100% {
+        transform: translateY(-20px) translateX(10px) scale(1.13);
+    }
+}
+
+@media (max-width: 1120px) {
+    .header-main-flex {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        min-height: unset;
+    }
+
+    .welcome-box-container {
+        margin-top: 35px;
+    }
+}
+
+@media (max-width: 700px) {
+    .welcome-box-container {
+        width: 98vw;
+        min-width: unset;
+        max-width: unset;
+    }
+
+    .header-main-flex {
+        padding: 0 4vw;
+    }
+}
+
+/* Blackboard shimmer */
+@keyframes shimmerDust {
+    0%, 100% {
+        opacity: 0.05;
+    }
+
+    50% {
+        opacity: 0.15;
+    }
+}
+
+/* First Choice Section Styles */
+.courses-intro-section {
+    background: var(--section-bg, white);
+    padding: 100px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.4s ease;
+}
+
+.intro-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #3c40c1;
+    margin-bottom: 60px;
+    overflow: hidden;
+    transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+.animated-heading {
+    display: inline-block;
+    border-right: 2px solid #3c40c1;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: none;
+}
+/* Typewriter Animation */
+@keyframes coolerTypewriter {
+    0% {
+        width: 0;
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        width: 100%;
+        transform: scale(1);
+    }
+}
+
+.animated-heading.typing {
+    animation: coolerTypewriter 2.8s steps(40, end) forwards, blink 0.75s step-end infinite;
+}
+/* Stats Container */
+.stats-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.stat-box {
+    flex: 1 1 200px;
+    max-width: 220px;
+    padding: 40px 20px;
+    border-radius: 16px;
+    color: white;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 8px 30px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+    .stat-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .stat-box .count-up {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .stat-box p {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 0;
+    }
+/* Decorative Circles */
+.decorative-circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0);
+    animation: none;
+    transition: box-shadow 0.4s ease;
+}
+
+.circle1 {
+    width: 120px;
+    height: 120px;
+    background-color: #3498db;
+    top: 20%;
+    left: 15%;
+}
+
+.circle2 {
+    width: 80px;
+    height: 80px;
+    background-color: #e67e22;
+    top: 35%;
+    right: 20%;
+}
+
+.circle3 {
+    width: 100px;
+    height: 100px;
+    background-color: #9b59b6;
+    bottom: 25%;
+    left: 25%;
+}
+
+.circle4 {
+    width: 60px;
+    height: 60px;
+    background-color: #2ecc71;
+    bottom: 20%;
+    right: 15%;
+}
+/* Circle Appearance Animation */
+@keyframes circleAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+}
+/* Dark Mode Styles */
+body.dark-mode .courses-intro-section {
+    background-color: #121212;
+}
+
+body.dark-mode .intro-title {
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+}
+
+body.dark-mode .animated-heading {
+    border-right: 2px solid #ffffff;
+}
+
+body.dark-mode .circle {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Courses Section Styles */
+.courses-section {
+    min-height: 100vh;
+    padding: 100px 40px;
+    background-color: var(--courses-bg, #f8f9fa);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+body.dark-mode .courses-section {
+    background-color: black;
+}
+
+.courses-heading {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #3c40c1;
+    margin-bottom: 30px;
+    opacity: 0;
+    transition: color 0.5s ease, text-shadow 0.5s ease;
+    letter-spacing: 1px;
+}
+
+body.dark-mode .courses-heading {
+    color: white;
+    text-shadow: 0 0 12px #ffffffaa;
+}
+
+.courses-actions {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 50px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+    .courses-actions a i {
+        font-size: 1.7rem;
+        color: #3c40c1;
+        cursor: pointer;
+        transition: transform 0.3s ease, color 0.3s ease;
+        padding: 10px;
+        border-radius: 50%;
+        background-color: #e0e4ff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .courses-actions a:hover i {
+        transform: scale(1.3);
+        background-color: #d3d7ff;
+    }
+
+body.dark-mode .courses-actions a i {
+    color: white;
+    background-color: #2f2f2f;
+}
+
+.course-cards-wrapper {
+    overflow-x: auto;
+    display: flex;
+    width: 100%;
+    padding-bottom: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    scrollbar-width: thin;
+    scrollbar-color: #3c40c1 #e0e0e0;
+}
+
+    .course-cards-wrapper::-webkit-scrollbar {
+        height: 10px;
+    }
+
+    .course-cards-wrapper::-webkit-scrollbar-thumb {
+        background-color: #3c40c1;
+        border-radius: 5px;
+    }
+
+.course-cards {
+    display: flex;
+    gap: 35px;
+    flex-wrap: nowrap;
+    padding: 10px;
+}
+
+.course-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+}
+
+    .course-card:hover {
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        border: 1px solid #3c40c133;
+        backdrop-filter: blur(8px);
+    }
+
+.course-mode {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #3c40c1;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+    .course-mode.synchronous {
+        background-color: #20bf6b;
+    }
+
+    .course-mode.asynchronous {
+        background-color: #eb3b5a;
+    }
+
+.course-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+}
+
+.course-card h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin: 0;
+    font-weight: 700;
+}
+
+.course-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1rem;
+    margin-top: 12px;
+}
+
+    .course-info i,
+    .course-info .person-name,
+    .course-info .rating {
+        color: black;
+        font-weight: 600;
+    }
+
+.course-card hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 15px 0;
+}
+/* View Course Details Button */
+.view-details-btn {
+    display: none;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: #3c40c1;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.course-card:hover .view-details-btn {
+    display: inline-block;
+}
+
+.view-details-btn:hover {
+    background-color: #2f32a3;
+}
+/* Container spacing */
+.course-cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: 20px;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+    scrollbar-width: thin;
+    scrollbar-color: #3c40c1 #e0e0e0;
+}
+/* FINAL FIX FOR VIEW DETAILS BUTTON */
+.course-card {
+    position: relative;
+    overflow: hidden;
+}
+
+    .course-card .view-details-container {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+        text-align: center;
+    }
+
+    .course-card:hover .view-details-container {
+        transform: translateY(0);
+    }
+
+    .course-card .view-details-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #3c40c1;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+        .course-card .view-details-btn:hover {
+            background-color: #2f32a3;
+            transform: scale(1.05);
+        }
+/* Dark mode styles */
+body.dark-mode .course-card .view-details-container {
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+}
+
+body.dark-mode .course-card .view-details-btn {
+    background-color: #4b50e6;
+}
+
+    body.dark-mode .course-card .view-details-btn:hover {
+        background-color: #3c40c1;
+    }
+
+#yourCoursesHeading {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+#courseCardsWrapper {
+    opacity: 1 !important;
+    transform: none !important;
+}
+/*Courses section new animation*/
+@keyframes fadeInDownWithBounce {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes cardFlipIn {
+    0% {
+        transform: perspective(1000px) rotateY(90deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: perspective(1000px) rotateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-heading {
+    animation: fadeInDownWithBounce 1s ease-out forwards;
+}
+
+.animate-buttons {
+    animation: bounceIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-card {
+    animation: cardFlipIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    transform-origin: center;
+    opacity: 0;
+}
+
+#navbarFirstName {
+    font-family: 'Nunito', 'Jost', 'Segoe UI', Arial, sans-serif;
+    letter-spacing: 1.2px;
+    font-weight: 700;
+    font-size: 1.09rem;
+    color: #3c40c1;
+    background: linear-gradient(90deg, #3c40c1 40%, #6658ea 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    padding-left: 2px;
+}
+/*calendar style*/
+.custom-calendar {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    background: transparent !important;
+    font-family: 'Nunito', 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 0 10px;
+}
+
+    .calendar-header span {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #333;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #3c40c1;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    min-width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .nav-btn:hover {
+        background-color: #f0f0ff;
+        transform: scale(1.1);
+    }
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    flex-grow: 1;
+}
+
+.day-header {
+    text-align: center;
+    padding: 8px 4px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #666;
+    background: #f8f9fa;
+    border-radius: 4px;
+    margin-bottom: 4px;
+}
+
+.day-cell {
+    text-align: center;
+    padding: 8px 4px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+    background: #fff;
+    border: 1px solid #e3e7fa;
+    transition: all 0.3s ease;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+    .day-cell.empty {
+        background: transparent;
+        border: none;
+    }
+
+    .day-cell.today {
+        background-color: #fff3cd;
+        border-color: #ffc107;
+        font-weight: 700;
+        color: #856404;
+    }
+
+    .day-cell.has-class {
+        background-color: #3c40c1 !important;
+        color: #fff !important;
+        font-weight: bold;
+        border-radius: 50%;
+        box-shadow: 0 0 7px rgba(60, 64, 193, 0.3);
+        border: 2px solid #3c40c1;
+    }
+
+        .day-cell.has-class:hover {
+            background-color: #5b67ea !important;
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(60, 64, 193, 0.4);
+            z-index: 10;
+        }
+
+/* Dark mode styles for custom calendar */
+body.dark-mode .calendar-header span {
+    color: #fff;
+}
+
+body.dark-mode .nav-btn {
+    color: #59bbff;
+}
+
+    body.dark-mode .nav-btn:hover {
+        background-color: #1d2232;
+    }
+
+body.dark-mode .day-header {
+    background: #23263a;
+    color: #b8c5ef;
+    border: 1px solid #44486a;
+}
+
+body.dark-mode .day-cell {
+    background: #23263a;
+    color: #e9e9f3;
+    border: 1px solid #44486a;
+}
+
+    body.dark-mode .day-cell.today {
+        background-color: #2c446a;
+        border-color: #59bbff;
+        color: #59bbff;
+    }
+
+    body.dark-mode .day-cell.has-class {
+        background-color: #59bbff !important;
+        color: #23263a !important;
+        border: 2px solid #59bbff;
+        box-shadow: 0 0 10px rgba(89, 187, 255, 0.4);
+    }
+
+        body.dark-mode .day-cell.has-class:hover {
+            background-color: #3c40c1 !important;
+            color: #fff !important;
+            box-shadow: 0 4px 12px rgba(89, 187, 255, 0.6);
+        }
+
+/* Calendar container adjustments for better fit */
+.calendar-box-container {
+    border-radius: 14px;
+    border: 2.2px solid #007BFF;
+    background: transparent !important;
+    width: 320px;
+    min-width: 260px;
+    max-width: 340px;
+    margin-top: 30px;
+    height: 320px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+body.dark-mode .calendar-box-container {
+    border-color: #59bbff;
+    background: #23263a !important;
+    box-shadow: 0 4px 28px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive design for calendar */
+@media (max-width: 768px) {
+    .calendar-box-container {
+        width: 280px;
+        height: 280px;
+    }
+
+    .custom-calendar {
+        padding: 10px;
+    }
+
+    .calendar-header span {
+        font-size: 1rem;
+    }
+
+    .day-cell {
+        min-height: 28px;
+        font-size: 0.8rem;
+        padding: 6px 2px;
+    }
+
+    .day-header {
+        padding: 6px 2px;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar-box-container {
+        width: 260px;
+        height: 260px;
+    }
+
+    .day-cell {
+        min-height: 24px;
+        font-size: 0.75rem;
+        padding: 4px 1px;
+    }
+
+    .nav-btn {
+        padding: 6px 8px;
+        font-size: 1rem;
+    }
+}
+/* Add/override dark mode styles at the end for best precedence */
+body.dark-mode {
+    background-color: #101014 !important;
+    color: #e9e9f3 !important;
+}
+
+    body.dark-mode .header-main-flex {
+        background: #181a22 !important;
+    }
+
+    body.dark-mode .welcome-box-container {
+        border-color: #59bbff;
+        background: #181a22 !important;
+    }
+
+    body.dark-mode .typing-container {
+        color: #59bbff;
+        border-right: 3px solid #59bbff;
+    }
+
+    body.dark-mode .calendar-box-container {
+        border-color: #59bbff;
+        background: #181a22 !important;
+    }
+
+    body.dark-mode .custom-calendar {
+        background: #181a22 !important;
+        color: #fff !important;
+    }
+
+        body.dark-mode .custom-calendar td,
+        body.dark-mode .custom-calendar th {
+            background: #23263a !important;
+            color: #fff !important;
+            border-radius: 6px;
+        }
+
+        body.dark-mode .custom-calendar .dark-date {
+            background-color: #59bbff !important;
+            color: #fff !important;
+        }
+
+    body.dark-mode .courses-intro-section {
+        background: #181a22 !important;
+    }
+
+    body.dark-mode .intro-title,
+    body.dark-mode .courses-heading {
+        color: #59bbff !important;
+        text-shadow: 0 0 10px #59bbff55;
+    }
+
+    body.dark-mode .stats-container .stat-box {
+        color: #181a22;
+        box-shadow: 0 6px 12px rgba(89,187,255,0.18), 0 8px 30px rgba(0,0,0,0.1);
+    }
+
+    body.dark-mode .decorative-circles .circle {
+        box-shadow: 0 0 20px #59bbff66;
+        opacity: 0.25 !important;
+    }
+
+    body.dark-mode .courses-section {
+        background: #101014 !important;
+    }
+
+    body.dark-mode .course-card {
+        background: #23263a !important;
+        color: #f1f5fa !important;
+        border: 1px solid #44486a !important;
+        box-shadow: 0 16px 32px rgba(89, 187, 255, 0.11);
+    }
+
+        body.dark-mode .course-card h3,
+        body.dark-mode .course-info i,
+        body.dark-mode .course-info .person-name,
+        body.dark-mode .course-info .rating {
+            color: #fff !important;
+        }
+
+        body.dark-mode .course-card img {
+            border: 1px solid #33364a !important;
+        }
+
+    body.dark-mode .view-details-btn {
+        background-color: #59bbff !important;
+        color: #181a22 !important;
+    }
+
+        body.dark-mode .view-details-btn:hover {
+            background-color: #3c40c1 !important;
+            color: #fff !important;
+        }
+
+    body.dark-mode .course-mode {
+        background-color: #59bbff !important;
+        color: #23263a !important;
+    }
+
+        body.dark-mode .course-mode.synchronous {
+            background-color: #20bf6b !important;
+            color: #181a22 !important;
+        }
+
+        body.dark-mode .course-mode.asynchronous {
+            background-color: #eb3b5a !important;
+            color: #fff !important;
+        }
+/* Navbar styling */
+.logo-bar {
+    display: flex !important;
+    align-items: center !important;
+    gap: 18px !important;
+    margin: 24px 0 0 36px;
+    height: 64px;
+}
+
+.scholapedia-logo {
+    height: 48px;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 7px;
+    max-width: 135px;
+}
+
+.ghost-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 48px;
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 54px;
+    max-height: 54px;
+}
+
+    .ghost-container #ghost {
+        transform: scale(0.68);
+        transform-origin: center;
+        width: 54px;
+        height: 54px;
+        display: block;
+    }
+
+@media (max-width: 600px) {
+    .logo-bar {
+        margin-left: 7vw;
+        gap: 9px;
+        height: 52px;
+    }
+
+    .scholapedia-logo {
+        height: 32px;
+        max-width: 87px;
+    }
+
+    .ghost-container {
+        height: 32px;
+        width: 32px;
+        max-width: 35px;
+        max-height: 35px;
+    }
+
+        .ghost-container #ghost {
+            transform: scale(0.52);
+        }
+}
+/* Header/nav bar fix */
+.headerSection {
+    width: 100vw;
+    min-width: 100vw;
+    background: #fff;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 12px rgba(60,64,193,0.06);
+    border-bottom: 1px solid #e3e7fa;
+    z-index: 10;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+body.dark-mode .headerSection {
+    background: #151824 !important;
+    box-shadow: 0 2px 12px #000a !important;
+    border-bottom: 1px solid #22243a;
+}
+
+@media (max-width: 900px) {
+    .headerSection {
+        min-height: 48px;
+    }
+}
+/* Settings/Dropdown/Hamburger */
+.settings-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 25px;
+    z-index: 1000;
+}
+
+.settings-icon, .theme-toggle-icon {
+    font-size: 22px;
+    color: #3c40c1;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease, scale 0.3s ease;
+    position: relative;
+}
+
+    .settings-icon:hover, .theme-toggle-icon:hover {
+        transform: scale(1.15);
+    }
+
+    .settings-icon.spin i {
+        transform: rotate(90deg);
+    }
+
+    .settings-icon i {
+        display: inline-block;
+        transition: transform 0.4s ease;
+        transform-origin: center;
+    }
+
+.dropdown-settings {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 6px 0;
+    width: 100px;
+    animation: fadeIn 0.3s ease-in-out;
+    z-index: 1001;
+}
+
+    .dropdown-settings a {
+        display: block;
+        padding: 6px 12px;
+        font-size: 14px;
+        color: #333;
+        text-decoration: none;
+        transition: background 0.2s;
+    }
+
+        .dropdown-settings a:hover {
+            background-color: #f0f0f0;
+        }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dark-mode {
+    background-color: #121212 !important;
+    color: #f0f0f0 !important;
+}
+
+    .dark-mode .dropdown-settings {
+        background-color: #333;
+        border-color: #444;
+    }
+
+        .dark-mode .dropdown-settings a {
+            color: #fff;
+        }
+
+            .dark-mode .dropdown-settings a:hover {
+                background-color: #444;
+            }
+/* Hamburger Icon */
+.hamburger-menu {
+    position: relative;
+    width: 22px;
+    height: 18px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1002;
+    transition: transform 0.3s ease;
+    margin-top: 6px;
+}
+
+.hamburger-line {
+    height: 2px;
+    background-color: #3c40c1;
+    border-radius: 1px;
+    transition: all 0.4s ease;
+}
+
+.hamburger-menu.active .line1 {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active .line2 {
+    opacity: 0;
+}
+
+.hamburger-menu.active .line3 {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    display: none;
+    flex-direction: column;
+    padding: 10px 0;
+    min-width: 160px;
+    z-index: 1001;
+    animation: fadeIn 0.3s ease;
+}
+
+    .dropdown-menu a {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        color: #3c40c1;
+        text-decoration: none;
+        font-weight: 600;
+        gap: 10px;
+        transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+        .dropdown-menu a:hover {
+            background-color: #f4f4f4;
+            transform: translateX(5px);
+        }
+
+    .dropdown-menu i {
+        font-size: 18px;
+        animation: bounce 1.5s infinite;
+    }
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+.scholapedia-logo {
+    opacity: 1 !important;
+    background: #fff !important; /* Change #fff to another color if needed */
+}
+
+/* --- CENTRE THE "FIRST CHOICE FOR ONLINE EDUCATION ANYWHERE" --- */
+.courses-intro-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-title {
+    /* already large, just force center */
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.animated-heading {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    /* keep border for typewriter effect */
+    border-right: 2px solid #3c40c1;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: none;
+}
+
+@media (max-width: 700px) {
+    .intro-title {
+        font-size: 2rem;
+        padding: 0 8px;
+        margin-bottom: 32px;
+    }
+
+    .animated-heading {
+        font-size: 1.2rem;
+    }
+}
+
+/* --- DARK MODE CALENDAR IMPROVEMENTS --- */
+body.dark-mode .calendar-box-container {
+    border-color: #59bbff;
+    background: #23263a !important; /* much darker background */
+}
+
+body.dark-mode .custom-calendar {
+    background: #23263a !important;
+    color: #fff !important;
+    border-radius: 14px;
+    /* add subtle shadow if you want: */
+    box-shadow: 0 2px 16px #0006 !important;
+}
+
+    body.dark-mode .custom-calendar td,
+    body.dark-mode .custom-calendar th {
+        background: #23263a !important;
+        color: #fff !important;
+        border-radius: 6px;
+        border: none !important;
+    }
+
+    body.dark-mode .custom-calendar .dark-date {
+        background-color: #59bbff !important;
+        color: #23263a !important;
+    }
+
+    body.dark-mode .custom-calendar .aspNetDisabled,
+    body.dark-mode .custom-calendar .aspNetDisabled * {
+        color: #888 !important;
+        background: #23263a !important;
+    }
+
+    /* Remove default focus/outline on calendar links in dark mode if needed */
+    body.dark-mode .custom-calendar a,
+    body.dark-mode .custom-calendar a:visited {
+        color: #fff !important;
+    }
+
+        body.dark-mode .custom-calendar a:focus {
+            outline: 1.5px solid #59bbff !important;
+            background: #1d2232 !important;
+        }
+
+    body.dark-mode .custom-calendar tr {
+        background: #23263a !important;
+    }
+
+    body.dark-mode .custom-calendar .selected,
+    body.dark-mode .custom-calendar .selected * {
+        background: #3c40c1 !important;
+        color: #fff !important;
+        border-radius: 50% !important;
+    }
+
+body.dark-mode .calendar-box-container {
+    /* Ensure some separation from the background */
+    box-shadow: 0 4px 28px #0003;
+}
+
+/* ---- Fix for FULL horizontal scroll of course cards ---- */
+.course-cards-wrapper {
+    overflow-x: auto !important;
+    display: block !important;
+    width: 100vw;
+    min-width: 100vw;
+    max-width: 100vw;
+    padding-bottom: 24px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    scrollbar-width: thin;
+    scrollbar-color: #3c40c1 #e0e0e0;
+    box-sizing: border-box;
+}
+
+.course-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+    flex-wrap: nowrap;
+    min-width: max-content;
+    padding: 10px 32px; /* Add horizontal padding so first and last card are fully visible */
+    box-sizing: border-box;
+}
+
+.course-card {
+    min-width: 320px;
+    max-width: 320px;
+    flex: 0 0 320px;
+}
+
+/* Hide the scroll bar for a cleaner look if you wish: */
+.course-cards-wrapper::-webkit-scrollbar {
+    height: 10px;
+    background: transparent;
+}
+
+.course-cards-wrapper::-webkit-scrollbar-thumb {
+    background: #3c40c1;
+    border-radius: 5px;
+    min-width: 40px;
+}
+
+.course-cards-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+@media (max-width: 700px) {
+    .course-cards {
+        gap: 15px;
+        padding: 10px 10px;
+    }
+
+    .course-card {
+        min-width: 88vw;
+        max-width: 90vw;
+    }
+
+    .course-cards-wrapper {
+        min-width: 100vw;
+        max-width: 100vw;
+    }
+}
+
+/* ---- Make particles in welcome message darker and glowing ---- */
+.particle {
+    position: absolute;
+    background: radial-gradient(circle, #1b193a 55%, #23204a 100%);
+    border-radius: 50%;
+    pointer-events: none;
+    /* New glow effect: */
+    box-shadow: 0 0 16px 6px #23204a99, 0 0 40px 6px #19197033;
+    animation: float infinite alternate ease-in-out;
+    z-index: 0;
+}
+
+/* Stronger glow for dark mode */
+body.dark-mode .particle {
+    background: radial-gradient(circle, #181d36 60%, #2c446a 100%);
+    box-shadow: 0 0 32px 8px #59bbff55, 0 0 24px 4px #19197077;
+    opacity: 0.95 !important;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0) scale(1);
+    }
+
+    100% {
+        transform: translateY(-24px) translateX(18px) scale(1.15);
+    }
+}
+
+/* ===================================
+   CUSTOM CALENDAR STYLES
+   =================================== */
+
+/* Replace existing calendar styles with these */
+.custom-calendar {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    background: transparent !important;
+    font-family: 'Nunito', 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 0 10px;
+}
+
+    .calendar-header span {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #333;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #3c40c1;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    min-width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .nav-btn:hover {
+        background-color: #f0f0ff;
+        transform: scale(1.1);
+    }
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    flex-grow: 1;
+}
+
+.day-header {
+    text-align: center;
+    padding: 8px 4px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #666;
+    background: #f8f9fa;
+    border-radius: 4px;
+    margin-bottom: 4px;
+}
+
+.day-cell {
+    text-align: center;
+    padding: 8px 4px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+    background: #fff;
+    border: 1px solid #e3e7fa;
+    transition: all 0.3s ease;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+    .day-cell.empty {
+        background: transparent;
+        border: none;
+    }
+
+    .day-cell.today {
+        background-color: #fff3cd;
+        border-color: #ffc107;
+        font-weight: 700;
+        color: #856404;
+    }
+
+    .day-cell.has-class {
+        background-color: #3c40c1 !important;
+        color: #fff !important;
+        font-weight: bold;
+        border-radius: 50%;
+        box-shadow: 0 0 7px rgba(60, 64, 193, 0.3);
+        border: 2px solid #3c40c1;
+    }
+
+        .day-cell.has-class:hover {
+            background-color: #5b67ea !important;
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(60, 64, 193, 0.4);
+            z-index: 10;
+        }
+
+/* Calendar container adjustments */
+.calendar-box-container {
+    border-radius: 14px;
+    border: 2.2px solid #007BFF;
+    background: transparent !important;
+    width: 320px;
+    min-width: 260px;
+    max-width: 340px;
+    margin-top: 30px;
+    height: 320px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+/* ===================================
+   MODAL STYLES FOR CLASS DETAILS
+   =================================== */
+
+.class-modal {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    animation: fadeInModal 0.3s ease-out;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideInModal 0.4s ease-out;
+    position: relative;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #3c40c1 0%, #5b67ea 100%);
+    color: white;
+    padding: 20px 30px;
+    border-radius: 16px 16px 0 0;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .modal-header h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+        font-family: 'Nunito', sans-serif;
+    }
+
+.close-modal {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    line-height: 1;
+    margin-left: 20px;
+}
+
+    .close-modal:hover {
+        color: #ffdddd;
+        transform: scale(1.1);
+    }
+
+.modal-body {
+    padding: 30px;
+    background: #fafcff;
+    border-radius: 0 0 16px 16px;
+}
+
+.class-details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.class-item {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(60, 64, 193, 0.08);
+    border: 1px solid #e3e7fa;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .class-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(60, 64, 193, 0.15);
+    }
+
+.class-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.course-name {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+    font-family: 'Nunito', sans-serif;
+}
+
+.module-type {
+    background-color: #3c40c1;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.class-info {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.time-info,
+.schedule-id {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+    .time-info i,
+    .schedule-id i {
+        color: #3c40c1;
+        font-size: 1rem;
+    }
+
+/* Modal animations */
+@keyframes fadeInModal {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInModal {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ===================================
+   DARK MODE STYLES
+   =================================== */
+
+/* Dark mode for calendar */
+body.dark-mode .calendar-header span {
+    color: #fff;
+}
+
+body.dark-mode .nav-btn {
+    color: #59bbff;
+}
+
+    body.dark-mode .nav-btn:hover {
+        background-color: #1d2232;
+    }
+
+body.dark-mode .day-header {
+    background: #23263a;
+    color: #b8c5ef;
+    border: 1px solid #44486a;
+}
+
+body.dark-mode .day-cell {
+    background: #23263a;
+    color: #e9e9f3;
+    border: 1px solid #44486a;
+}
+
+    body.dark-mode .day-cell.today {
+        background-color: #2c446a;
+        border-color: #59bbff;
+        color: #59bbff;
+    }
+
+    body.dark-mode .day-cell.has-class {
+        background-color: #59bbff !important;
+        color: #23263a !important;
+        border: 2px solid #59bbff;
+        box-shadow: 0 0 10px rgba(89, 187, 255, 0.4);
+    }
+
+        body.dark-mode .day-cell.has-class:hover {
+            background-color: #3c40c1 !important;
+            color: #fff !important;
+            box-shadow: 0 4px 12px rgba(89, 187, 255, 0.6);
+        }
+
+body.dark-mode .calendar-box-container {
+    border-color: #59bbff;
+    background: #23263a !important;
+    box-shadow: 0 4px 28px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode for modal */
+body.dark-mode .modal-content {
+    background-color: #23263a;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode .modal-header {
+    background: linear-gradient(135deg, #59bbff 0%, #3c40c1 100%);
+    color: #23263a;
+}
+
+    body.dark-mode .modal-header h2 {
+        color: #23263a;
+    }
+
+body.dark-mode .close-modal {
+    color: #23263a;
+}
+
+    body.dark-mode .close-modal:hover {
+        color: #181a22;
+    }
+
+body.dark-mode .modal-body {
+    background: #181a22;
+}
+
+body.dark-mode .class-item {
+    background: #23263a;
+    border: 1px solid #44486a;
+    box-shadow: 0 4px 12px rgba(89, 187, 255, 0.08);
+}
+
+    body.dark-mode .class-item:hover {
+        box-shadow: 0 8px 25px rgba(89, 187, 255, 0.15);
+    }
+
+body.dark-mode .course-name {
+    color: #e9e9f3;
+}
+
+body.dark-mode .time-info,
+body.dark-mode .schedule-id {
+    color: #b8c5ef;
+}
+
+    body.dark-mode .time-info i,
+    body.dark-mode .schedule-id i {
+        color: #59bbff;
+    }
+
+body.dark-mode .module-type {
+    background-color: #59bbff;
+    color: #23263a;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+@media (max-width: 768px) {
+    .calendar-box-container {
+        width: 280px;
+        height: 280px;
+    }
+
+    .custom-calendar {
+        padding: 10px;
+    }
+
+    .calendar-header span {
+        font-size: 1rem;
+    }
+
+    .day-cell {
+        min-height: 28px;
+        font-size: 0.8rem;
+        padding: 6px 2px;
+    }
+
+    .day-header {
+        padding: 6px 2px;
+        font-size: 0.75rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        max-height: 85vh;
+    }
+
+    .modal-header {
+        padding: 15px 20px;
+    }
+
+        .modal-header h2 {
+            font-size: 1.25rem;
+        }
+
+    .modal-body {
+        padding: 20px;
+    }
+
+    .class-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .class-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .course-name {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar-box-container {
+        width: 260px;
+        height: 260px;
+    }
+
+    .day-cell {
+        min-height: 24px;
+        font-size: 0.75rem;
+        padding: 4px 1px;
+    }
+
+    .nav-btn {
+        padding: 6px 8px;
+        font-size: 1rem;
+    }
+
+    .modal-content {
+        width: 98%;
+        margin: 15% auto;
+    }
+
+    .modal-header {
+        padding: 12px 15px;
+    }
+
+    .modal-body {
+        padding: 15px;
+    }
+
+    .class-item {
+        padding: 15px;
+    }
+}

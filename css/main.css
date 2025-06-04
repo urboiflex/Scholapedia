@@ -1,0 +1,421 @@
+﻿/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Import Raleway font */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Container */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 5% 0 5%;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    position: relative; /* Contains absolutely positioned elements */
+    background-color: #fdf0ed; /* Light peach background color */
+    overflow: visible; /* Allow elements to extend beyond */
+}
+
+.hero-text {
+    max-width: 600px;
+    text-align: left;
+    flex: 1;
+    z-index: 5; /* Ensure text is above floating elements */
+    padding-left: calc((100vw - 1400px) / 2);
+    padding-bottom: 4rem;
+}
+
+.hero-headline {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    font-family: 'Raleway', sans-serif;
+}
+
+.hero-subtext {
+    font-size: 1.25rem;
+    color: #505050;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+.hero-small-text {
+    font-size: 0.95rem;
+    color: #666666;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    font-style: italic;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Button styling */
+.button {
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #3c42c9;
+    transition: all 1000ms;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #3c42c9;
+    font-family: 'Raleway', sans-serif;
+}
+
+    .button:hover {
+        color: #ffffff;
+        transform: scale(1.1);
+        outline: 2px solid #3c42c9;
+        box-shadow: 4px 5px 17px -4px #3c42c9;
+    }
+
+    .button::before {
+        content: "";
+        position: absolute;
+        left: -50px;
+        top: 0;
+        width: 0;
+        height: 100%;
+        background-color: #3c42c9;
+        transform: skewX(45deg);
+        z-index: -1;
+        transition: width 1000ms;
+    }
+
+    .button:hover::before {
+        width: 250%;
+    }
+
+/* Hero image styling */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: -10px;
+    position: relative;
+    padding-right: calc((100vw - 1400px) / 2);
+}
+
+.hero-bg-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: visible; /* This is crucial - allow elements to extend beyond */
+}
+
+.hero-bg-bottom {
+    height: 10px; /* Just use this for background color change only */
+    position: relative;
+    z-index: 1;
+}
+
+/* Add a pseudo-element to create the background cutoff */
+.hero-bg-wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fdf0ed;
+    z-index: -2; /* Place behind everything else */
+}
+
+.person-image {
+    max-height: 450px;
+    max-width: 100%;
+    position: relative;
+    z-index: 4;
+    display: block;
+    margin-right: 20px;
+}
+
+.hero-tagline {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #3c42c9;
+    z-index: 5;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Tag styling (eLearning Platform) */
+.tag {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: #ff6b35;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    z-index: 5;
+    font-family: 'Raleway', sans-serif;
+}
+
+.floating-tag {
+    animation: floatTag 5s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes floatTag {
+    0% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(3deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+}
+
+/* Floating UI Elements */
+.floating-icon {
+    position: absolute;
+    background-color: white;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+    animation: float 4s ease-in-out infinite;
+}
+
+    .floating-icon img {
+        width: 30px;
+        height: 30px;
+        display: block;
+    }
+
+.icon-1 {
+    top: 80px;
+    right: 50px;
+    animation-delay: 0s;
+}
+
+.icon-2 {
+    top: 180px;
+    left: 50px;
+    animation-delay: 1s;
+}
+
+.icon-3 {
+    bottom: 100px;
+    right: 100px;
+    animation-delay: 2s;
+}
+
+.icon-4 {
+    top: 150px;
+    right: 180px;
+    animation-delay: 1.5s;
+}
+
+.icon-5 {
+    bottom: 150px;
+    left: 100px;
+    animation-delay: 0.5s;
+}
+
+.icon-6 {
+    top: 300px;
+    right: 20px;
+    animation-delay: 2.5s;
+}
+
+/* Geometric Shapes */
+.floating-shape {
+    position: absolute;
+    z-index: 1;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+    .triangle.green {
+        border-width: 0 100px 150px 100px;
+        border-color: transparent transparent #17c59b transparent;
+        bottom: 50px; /* Allow it to extend below */
+        right: 0;
+        transform: rotate(15deg);
+        opacity: 0.8;
+        animation: rotate 15s linear infinite;
+        z-index: 0;
+    }
+
+    .triangle.orange {
+        border-width: 0 90px 100px 80px;
+        border-color: transparent transparent #ff6b35 transparent;
+        top: 100px;
+        right: 150px;
+        transform: rotate(-15deg);
+        opacity: 0.7;
+        animation: rotate 12s linear infinite reverse;
+        z-index: 0;
+    }
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.circle1 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #17c59b;
+    top: 50px;
+    right: 200px;
+    animation: pulse 3s infinite;
+}
+
+.circle2 {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #ff6b35;
+    top: 150px;
+    right: 250px;
+    animation: pulse 3s infinite;
+    animation-delay: 1.5s;
+}
+
+.circle3 {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #3c42c9;
+    bottom: 30px; /* Allow it to extend below */
+    left: 200px;
+    animation: pulse 4s infinite;
+    animation-delay: 2s;
+    z-index: 0;
+}
+
+/* Animations */
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column;
+        padding: 2rem 2rem 0 2rem;
+    }
+
+    .hero-headline {
+        font-size: 2.5rem;
+    }
+
+    .hero-text {
+        margin-bottom: 2rem;
+        max-width: 100%;
+        padding-left: 0;
+        padding-bottom: 2rem;
+    }
+
+    .hero-image {
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    .floating-icon img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .icon-1 {
+        top: 50px;
+        right: 20px;
+    }
+
+    .icon-2 {
+        top: 150px;
+        left: 20px;
+    }
+
+    .icon-3 {
+        bottom: 80px;
+        right: 80px;
+    }
+
+    .icon-4 {
+        top: 100px;
+        right: 100px;
+    }
+
+    .icon-5 {
+        bottom: 120px;
+        left: 60px;
+    }
+
+    .icon-6 {
+        top: 200px;
+        right: 10px;
+    }
+
+    .triangle.green, .triangle.orange {
+        transform: scale(0.7);
+    }
+}

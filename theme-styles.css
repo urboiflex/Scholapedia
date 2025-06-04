@@ -1,0 +1,561 @@
+﻿/* Enhanced theme-styles.css with better text contrast handling */
+
+/* CSS Variables for Light Theme (Default) */
+:root {
+    /* Light Theme Colors */
+    --light-purple: #A68DD9;
+    --lighter-purple: #C6B4E8;
+    --bg-color: #F8F9FA;
+    --card-bg-color: #FFFFFF;
+    --text-color: #343A40;
+    --text-muted: #6C757D;
+    --border-color: #F1F1F1;
+    --hover-bg: #F1F1F1;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --panel-header-bg: #fcfcff;
+    --sidebar-text: #343A40;
+    --sidebar-active-text: #FFFFFF;
+    --sidebar-hover-text: #FFFFFF;
+    --input-bg: #FFFFFF;
+    --input-text: #343A40;
+    --input-border: #ced4da;
+    --input-focus-border: #A68DD9;
+    --btn-text: #FFFFFF;
+    --dropdown-bg: #FFFFFF;
+    --dropdown-text: #343A40;
+    --table-row-hover: #f8f9fa;
+    --alert-info-bg: #cce5ff;
+    --alert-success-bg: #d4edda;
+    --alert-warning-bg: #fff3cd;
+    --alert-danger-bg: #f8d7da;
+    /* Transitions for smooth theme changes */
+    --transition-time: 0.3s;
+}
+
+/* Dark Theme Colors */
+[data-theme="dark"] {
+    --light-purple: #9A7BCE; /* Slightly adjusted purple for dark mode */
+    --lighter-purple: #7E65B7;
+    --bg-color: #1a1d21;
+    --card-bg-color: #2a2d31;
+    --text-color: #E9ECEF;
+    --text-muted: #ADB5BD;
+    --border-color: #3a3d41;
+    --hover-bg: #3a3d41;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --panel-header-bg: #272b30;
+    --sidebar-text: #E9ECEF;
+    --sidebar-active-text: #FFFFFF;
+    --sidebar-hover-text: #FFFFFF;
+    --input-bg: #2a2d31;
+    --input-text: #E9ECEF;
+    --input-border: #3a3d41;
+    --input-focus-border: #9A7BCE;
+    --btn-text: #FFFFFF;
+    --dropdown-bg: #2a2d31;
+    --dropdown-text: #E9ECEF;
+    --table-row-hover: #3a3d41;
+    --alert-info-bg: #2a3f5a;
+    --alert-success-bg: #2a4434;
+    --alert-warning-bg: #594b26;
+    --alert-danger-bg: #582a30;
+}
+
+/* Apply theme colors to all elements */
+
+/* General body and text */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-time) ease, color var(--transition-time) ease;
+}
+
+    /* Force all text to use the theme color */
+    body * {
+        color: var(--text-color);
+    }
+
+/* Sidebar elements */
+.sidebar {
+    background-color: var(--card-bg-color);
+    box-shadow: 0px 0px 15px var(--shadow-color);
+    transition: all var(--transition-time) ease;
+}
+
+.sidebar-header {
+    border-bottom: 1px solid var(--border-color);
+}
+
+    .sidebar-header h3 {
+        color: var(--light-purple) !important;
+    }
+
+.sidebar-item {
+    color: var(--sidebar-text) !important;
+    transition: all var(--transition-time) ease;
+}
+
+    .sidebar-item:hover {
+        background-color: var(--lighter-purple);
+        color: var(--sidebar-hover-text) !important;
+    }
+
+    .sidebar-item.active {
+        background-color: var(--light-purple);
+        color: var(--sidebar-active-text) !important;
+    }
+
+/* Content area */
+.content-area {
+    background-color: var(--bg-color);
+    transition: all var(--transition-time) ease;
+}
+
+.top-nav {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-title {
+    color: var(--text-color) !important;
+}
+
+/* Admin info/avatars */
+.admin-avatar {
+    background-color: var(--light-purple);
+    color: white !important;
+}
+
+.admin-name {
+    color: var(--text-color) !important;
+}
+
+.admin-role {
+    color: var(--text-muted) !important;
+}
+
+/* User avatars in tables */
+.user-avatar, .creator-avatar {
+    background-color: var(--light-purple);
+    color: white !important;
+}
+
+.user-name, .creator-name {
+    color: var(--text-color) !important;
+}
+
+.user-email {
+    color: var(--text-muted) !important;
+}
+
+/* Notifications */
+.notification-bell i {
+    color: var(--text-muted) !important;
+}
+
+.notification-badge {
+    background-color: var(--light-purple);
+    color: white !important;
+}
+
+.notification-dropdown {
+    background-color: var(--card-bg-color);
+    box-shadow: 0px 0px 15px var(--shadow-color);
+}
+
+.notification-header {
+    border-bottom: 1px solid var(--border-color);
+}
+
+    .notification-header h6 {
+        color: var(--text-color) !important;
+    }
+
+    .notification-header a {
+        color: var(--light-purple) !important;
+    }
+
+.notification-item {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.notification-icon {
+    background-color: var(--lighter-purple);
+    color: white !important;
+}
+
+.notification-title {
+    color: var(--text-color) !important;
+}
+
+.notification-text {
+    color: var(--text-color) !important;
+}
+
+.notification-time {
+    color: var(--text-muted) !important;
+}
+
+/* Sections */
+.section-description {
+    color: var(--text-muted) !important;
+}
+
+.announcement-title, .settings-title, .courses-title, .users-title, .feedback-title {
+    color: var(--text-color) !important;
+}
+
+.announcement-subtitle, .settings-subtitle, .courses-subtitle, .users-subtitle {
+    color: var(--text-muted) !important;
+}
+
+/* Containers and forms */
+.announcement-form-container,
+.settings-form-container,
+.users-section,
+.feedback-container,
+.courses-section {
+    background-color: var(--card-bg-color);
+    box-shadow: 0px 0px 15px var(--shadow-color);
+}
+
+/* Form elements */
+.form-label {
+    color: var(--text-color) !important;
+}
+
+.form-control {
+    background-color: var(--input-bg);
+    color: var(--input-text) !important;
+    border: 1px solid var(--input-border);
+}
+
+    .form-control:focus {
+        background-color: var(--input-bg);
+        color: var(--input-text) !important;
+        border-color: var(--input-focus-border);
+        box-shadow: 0 0 0 3px rgba(154, 123, 206, 0.25);
+    }
+
+/* Input placeholder color */
+::placeholder {
+    color: var(--text-muted) !important;
+    opacity: 0.7;
+}
+
+/* Buttons */
+.btn-draft {
+    background-color: var(--card-bg-color);
+    color: var(--text-color) !important;
+    border: 1px solid var(--border-color);
+}
+
+    .btn-draft:hover {
+        background-color: var(--hover-bg);
+    }
+
+.btn-send, .btn-update {
+    color: var(--btn-text) !important;
+}
+
+.add-button {
+    background-color: var(--light-purple);
+    color: white !important;
+    border: none;
+}
+
+    .add-button:hover {
+        background-color: var(--lighter-purple);
+    }
+
+.export-button {
+    color: var(--light-purple) !important;
+}
+
+/* Search and filters */
+.search-container {
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+}
+
+    .search-container i {
+        color: var(--text-muted) !important;
+    }
+
+.search-input {
+    background-color: transparent;
+    color: var(--input-text) !important;
+    border: none;
+}
+
+.filter-dropdown {
+    background-color: var(--input-bg);
+    color: var(--input-text) !important;
+    border: 1px solid var(--input-border);
+}
+
+/* Tables */
+.history-table th,
+.feedback-table th,
+.users-table th,
+.courses-table th {
+    background-color: var(--panel-header-bg);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color) !important;
+}
+
+.history-table td,
+.feedback-table td,
+.users-table td,
+.courses-table td {
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color) !important;
+}
+
+.history-table tr:hover,
+.feedback-table tr:hover,
+.users-table tr:hover,
+.courses-table tr:hover {
+    background-color: var(--table-row-hover);
+}
+
+/* Status badges */
+.status-badge {
+    background-color: var(--hover-bg);
+    color: var(--text-color) !important;
+}
+
+    .status-badge.status-active {
+        background-color: rgba(40, 167, 69, 0.2);
+        color: #28a745 !important;
+    }
+
+[data-theme="dark"] .status-badge.status-active {
+    background-color: rgba(40, 167, 69, 0.3);
+    color: #5ecc77 !important;
+}
+
+/* Table actions */
+.action-button {
+    background-color: var(--bg-color);
+    color: var(--text-muted) !important;
+}
+
+    .action-button:hover {
+        background-color: var(--hover-bg);
+        color: var(--light-purple) !important;
+    }
+
+    .action-button.view-button:hover {
+        color: var(--light-purple) !important;
+    }
+
+    .action-button.delete-button:hover i {
+        color: #dc3545 !important;
+    }
+
+/* Pagination */
+.pagination-container a {
+    background-color: var(--card-bg-color);
+    color: var(--text-color) !important;
+    border: 1px solid var(--border-color);
+}
+
+    .pagination-container a:hover {
+        background-color: var(--hover-bg);
+        color: var(--text-color) !important;
+    }
+
+.pagination-container span {
+    background-color: var(--light-purple);
+    color: white !important;
+    border: 1px solid var(--light-purple);
+}
+
+/* Modal/popup styling */
+.modal, .announcement-overlay {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.modal-content, .announcement-modal {
+    background-color: var(--card-bg-color) !important;
+}
+
+    .modal-header, .announcement-modal header {
+        background-color: var(--panel-header-bg) !important;
+        border-bottom: 1px solid var(--border-color) !important;
+    }
+
+    .modal-title, .announcement-modal h3 {
+        color: var(--text-color) !important;
+    }
+
+    .modal-body, .announcement-modal .body {
+        color: var(--text-color) !important;
+    }
+
+/* Alerts and messages */
+.alert-info {
+    background-color: var(--alert-info-bg);
+    color: #0c5460 !important;
+}
+
+.alert-success {
+    background-color: var(--alert-success-bg);
+    color: #155724 !important;
+}
+
+.alert-warning {
+    background-color: var(--alert-warning-bg);
+    color: #856404 !important;
+}
+
+.alert-danger {
+    background-color: var(--alert-danger-bg);
+    color: #721c24 !important;
+}
+
+[data-theme="dark"] .alert-info {
+    color: #8fcafe !important;
+}
+
+[data-theme="dark"] .alert-success {
+    color: #8fd19e !important;
+}
+
+[data-theme="dark"] .alert-warning {
+    color: #ffdf7e !important;
+}
+
+[data-theme="dark"] .alert-danger {
+    color: #f5a9b1 !important;
+}
+
+/* Links */
+a, a:visited {
+    color: var(--light-purple) !important;
+}
+
+    a:hover {
+        color: var(--lighter-purple) !important;
+    }
+
+/* Settings Theme Switcher Styles */
+.theme-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.theme-toggle-label {
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.settings-theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+    .settings-theme-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+.settings-theme-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--panel-header-bg);
+    transition: .4s;
+    border-radius: 34px;
+    box-shadow: inset 0 0 5px var(--shadow-color);
+}
+
+    .settings-theme-slider:before {
+        position: absolute;
+        content: "";
+        height: 22px;
+        width: 22px;
+        left: 4px;
+        bottom: 4px;
+        background-color: var(--light-purple);
+        transition: .4s;
+        border-radius: 50%;
+    }
+
+input:checked + .settings-theme-slider:before {
+    transform: translateX(30px);
+}
+
+.theme-mode-text {
+    display: inline-block;
+    margin-left: 10px;
+    color: var(--text-color);
+}
+
+/* Add these styles to the end of your theme-styles.css file */
+
+/* Super specific selectors to force white text in sidebar buttons regardless of theme */
+body .sidebar-menu .cssbuttons-io span,
+body .sidebar-menu .cssbuttons-io span span,
+body .sidebar-menu .cssbuttons-io:not(.active) span,
+body .sidebar-menu .cssbuttons-io.active span,
+body[data-theme="light"] .sidebar-menu .cssbuttons-io span,
+body[data-theme="dark"] .sidebar-menu .cssbuttons-io span,
+.cssbuttons-io span,
+.cssbuttons-io:hover span {
+    color: white !important;
+}
+
+    /* Force white color on direct children of span */
+    body .sidebar-menu .cssbuttons-io span *,
+    .cssbuttons-io span * {
+        color: white !important;
+    }
+
+/* Target SVG elements specifically */
+body .sidebar-menu .cssbuttons-io svg,
+body .sidebar-menu .cssbuttons-io svg *,
+body .sidebar-menu .cssbuttons-io svg path,
+.cssbuttons-io svg,
+.cssbuttons-io svg * {
+    fill: white !important;
+    color: white !important;
+}
+
+    /* Fix for SVG paths specifically */
+    body .sidebar-menu .cssbuttons-io svg path,
+    .cssbuttons-io svg path {
+        fill: currentColor !important;
+    }
+
+/* Additional fix for any text nodes */
+body .sidebar-menu .cssbuttons-io span:before,
+body .sidebar-menu .cssbuttons-io span:after {
+    color: white !important;
+}
+
+/* Remove any theme-based color inheritance */
+.sidebar-menu .cssbuttons-io {
+    color-scheme: dark !important;
+}
+
+/* Ensure the background doesn't get affected */
+html[data-theme="light"] .cssbuttons-io,
+html[data-theme="dark"] .cssbuttons-io {
+    background: linear-gradient(to right, #8e2de2, #4a00e0) !important;
+}
+
+    /* Extra strong inline style override for active state */
+    html[data-theme="light"] .cssbuttons-io.active,
+    html[data-theme="dark"] .cssbuttons-io.active {
+        background: linear-gradient(to right, #b366ff, #7733ff) !important;
+    }

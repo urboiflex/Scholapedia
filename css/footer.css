@@ -1,0 +1,102 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    background-color: #3c42c9;
+    color: white;
+    padding: 50px 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
+    padding: 0 15px;
+    opacity: 100%;
+}
+
+    .footer-column h3 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: white;
+        opacity: 90%;
+    }
+
+.social-heading {
+    margin-top: 40px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+    .footer-column ul li {
+        margin-bottom: 10px;
+        opacity: 80%;
+        transition: opacity 0.3s ease;
+    }
+
+        .footer-column ul li:hover {
+            opacity: 100%;
+        }
+
+        .footer-column ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            transition: opacity 0.3s ease;
+        }
+
+            .footer-column ul li a:hover {
+                text-decoration: underline;
+            }
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .footer-column {
+        flex: 0 0 33.33%;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-column {
+        flex: 0 0 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-column {
+        flex: 0 0 100%;
+        text-align: center;
+    }
+}

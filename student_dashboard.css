@@ -1,0 +1,644 @@
+﻿body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    color: #333;
+    background-color:#fff;
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite;
+    overflow-x: hidden;
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+
+}
+/* === Dark Theme Overrides === */
+body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+    /* Welcome Box */
+    body.dark-theme .welcome-box {
+
+        border: 2px solid #3399FF;
+        box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3), 0 4px 8px rgba(255,255,255,0.1);
+    }
+
+        body.dark-theme .welcome-box h1,
+        body.dark-theme .welcome-message {
+            color: #ffffff;
+        }
+    body.dark-theme .sub-message {
+        color: #ffffff;
+    }
+
+    /* Side Navigation */
+    body.dark-theme .side-nav {
+        background: #2e2e2e;
+    }
+
+    /* Calendar Container */
+    body.dark-theme .calendar-container {
+        background-color: #000000;
+        border-color: #3399FF;
+        box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3), 0 4px 8px rgba(255,255,255,0.1);
+        height: 700px !important;
+    }
+
+    /* Calendar Header & Contents */
+    body.dark-theme .calendar-header h2,
+    body.dark-theme .calendar-day-header,
+    body.dark-theme .calendar-day {
+        color: #ffffff;
+    }
+
+
+/* Dark mode */
+body.dark-theme .welcome-box {
+    background-color: #1f2a3a; /* dark blue-gray */
+    color: #ffffff;
+}
+
+
+
+    /* Carousel Card */
+    body.dark-theme .carousel-card {
+        background: linear-gradient(to bottom, #0a1a3f, #1c2f6e);
+    }
+
+    /* Notification Bar */
+    body.dark-theme .notification-bar {
+        background: #2e2e2e;
+    }
+
+    /* Chart container in dark mode */
+    body.dark-theme #chartContainer {
+        background-color: #1c1c1c !important;
+        border-color: #3399FF !important;
+        box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3), 0 4px 8px rgba(255,255,255,0.1) !important;
+        color: #ffffff !important;
+    }
+
+        /* All text inside chart container */
+        body.dark-theme #chartContainer h3,
+        body.dark-theme #chartContainer select,
+        body.dark-theme #chartContainer option {
+            color: #ffffff !important;
+            background-color: #333 !important;
+            border-color: #555 !important;
+        }
+    /* Dark Theme */
+    body.dark-theme .welcome-box-container {
+        background-color: #1f2a3a;
+        border-color: #3399FF;
+    }
+
+    body.dark-theme .welcome-box {
+        background-color: #1f2a3a;
+        color: white;
+        box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3), 0 4px 8px rgba(255, 255, 255, 0.1);
+    }
+
+        body.dark-theme .welcome-box:hover {
+            background-color: #1f2a3a !important;
+            color: white !important;
+        }
+    body.dark-theme .welcome-message,
+    body.dark-theme .sub-message {
+        color: white;
+    }
+
+.dashboard-container {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+
+
+
+/* Welcome Box Container */
+.welcome-box-container {
+    border-radius: 10px;
+    padding: 30px;
+    border: 2px solid #007BFF;
+    width: 620px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin-top: 65px;
+    height: 400px;
+    margin-left: -5px;
+    background-color: white; /* Light mode default */
+}
+
+/* Welcome Box itself */
+.welcome-box {
+    background-color: white;
+    color: #191970;
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: none !important; /* prevent unwanted hover transitions */
+}
+
+    /* Prevent hover effect from changing anything */
+    .welcome-box:hover {
+        background-color: white !important;
+        color: #191970 !important;
+    }
+
+
+
+/* Welcome Content */
+.welcome-box-container h1 {
+    margin-top: 0;
+    font-size: 2.2em;
+}
+
+.welcome-message {
+    font-size: 1.2em;
+    color: #191970;
+    margin: 15px 0 10px 0;
+}
+
+.sub-message {
+    font-size: 1em;
+    margin: 0;
+    color: #191970;
+}
+
+
+
+/* Welcome Image */
+.welcome-image {
+    position: absolute;
+    top: 65px;
+    left: 480px;
+    z-index: 3;
+}
+
+    .welcome-image img {
+        width: 430px;
+        height: 430px;
+    }
+
+
+/* Typing effect for welcome message */
+.typing-container {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #007bff;
+    animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+    font-size: 1.9rem;
+    font-weight: 500;
+
+    max-width: 100%;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 50%
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+
+
+/* Particle animation */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Update your existing particle CSS */
+.particle {
+    position: absolute;
+    background-color: #265af7;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float infinite alternate ease-in-out;
+    /* Add these for better visibility */
+    z-index: 0;
+    box-shadow: 0 0 5px rgba(38, 90, 247, 0.5);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0) scale(1);
+    }
+
+    100% {
+        transform: translateY(-20px) translateX(10px) scale(1.1);
+    }
+}
+.floating-shape {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    pointer-events: none;
+    z-index: -1;
+    animation: float ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(50px, 25px) rotate(5deg);
+    }
+
+    50% {
+        transform: translate(100px, 0) rotate(0deg);
+    }
+
+    75% {
+        transform: translate(50px, -25px) rotate(-5deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+/* Calendar Styles */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 80px; /* Account for fixed header */
+}
+
+/* Top section container - holds welcome box and calendar side by side */
+.top-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+/* Welcome Box Container - Remove absolute positioning */
+.welcome-box-container {
+    border-radius: 10px;
+    padding: 30px;
+    border: 2px solid #007BFF;
+    width: 620px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    height: 400px;
+    background-color: white;
+    /* Remove margin-left and margin-top */
+    margin-left: 0;
+    margin-top: 0;
+}
+
+/* Calendar Container - Remove absolute positioning */
+.calendar-container {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 500px; /* Increased from 450px */
+    height: 1000px; /* SIGNIFICANTLY INCREASED from 540px to contain all content */
+    border: 2px solid #007BFF;
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.2), 0 4px 8px rgba(0,0,0,0.1);
+    margin-left: 0;
+    margin-top: 0;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column; /* Stack calendar and events vertically */
+}
+
+.custom-calendar {
+    flex-shrink: 0; /* Don't shrink the calendar */
+    margin-bottom: 20px; /* Space between calendar and events */
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+    .calendar-header h2 {
+        margin: 0;
+        color: #2c3e50;
+        font-size: 1.2em;
+    }
+
+
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-day-header {
+    text-align: center;
+    font-weight: bold;
+    color: #4a6fa5;
+    padding: 5px;
+    font-size: 0.8em;
+}
+
+.calendar-day {
+    text-align: center;
+    padding: 10px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+}
+
+    .calendar-day:hover {
+        background: #e6f2ff;
+    }
+
+    .calendar-day.today {
+        background: #4a6fa5;
+        color: white;
+        font-weight: bold;
+    }
+
+    .calendar-day.has-event::after {
+        content: '';
+        position: absolute;
+        bottom: 3px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #4CAF50;
+    }
+
+    .calendar-day.empty {
+        background: transparent;
+        cursor: default;
+    }
+
+.calendar-events {
+    margin-top: 0; /* Remove top margin since we have margin-bottom on calendar */
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    flex-grow: 1; /* Take remaining space in container */
+    overflow-y: auto; /* Allow scrolling if needed */
+    max-height: 300px; /* Limit max height to prevent overflow */
+}
+
+    .calendar-events h3 {
+        margin: 0 0 10px 0; /* Remove top margin, add bottom margin */
+        padding: 0; /* Remove any padding */
+    }
+
+    .calendar-events ul {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0 0 0;
+
+    }
+
+    .calendar-events li {
+        padding: 10px; /* Add padding all around */
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 0.85em; /* Slightly smaller font */
+        min-height: 80px; /* Reduced min-height */
+        text-align: left;
+        margin-bottom: 8px;
+        word-wrap: break-word; /* Ensure long text wraps */
+        overflow: hidden; /* Hide any overflow */
+        box-sizing: border-box; /* Include padding in calculations */
+        border-radius: 4px; /* Add slight rounding */
+        background: rgba(255, 255, 255, 0.05); /* Subtle background */
+    }
+
+        .calendar-events li:last-child {
+            margin-bottom: 0; /* Remove margin from last item */
+        }
+
+.event-highlight {
+    background-color: #ffeb3b;
+    border: 2px solid #f57c00;
+}
+
+.calendar-day {
+    cursor: pointer;
+
+}
+
+    .calendar-day.today {
+        background-color: #a8d0e6;
+        border: 2px solid #2196F3;
+    }
+
+    .calendar-day.has-event {
+        background-color: #9cbafc;
+    }
+
+    .calendar-day.selected {
+        background-color: #7f8bd0; /* Add your desired highlight color */
+        border: 2px solid #f00; /* Optional border for visual effect */
+    }
+/* Event categories color styles */
+.meeting-event,
+.deadline-event,
+.assessment-event {
+
+    border-radius: 12px;
+    color: white;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    font-size: 10px;
+    line-height: 1.0;
+    text-align:left;
+}
+
+.meeting-event {
+    background-color: blue;
+}
+
+.deadline-event {
+    background-color: red;
+}
+
+.assessment-event {
+    background-color: green;
+}
+
+
+/* Styling for the event details in the list */
+.calendar-events li {
+    list-style: none;
+    margin: 20px 0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.6; /* Increased line spacing */
+    min-height: 180px; /* Makes the box a bit taller */
+    width: 100%; /* Ensures it fits inside the parent */
+}
+
+
+    .calendar-events li strong {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+.add-event-btn {
+    position: absolute;
+    top: 50px; /* Adjust this value to move it vertically */
+    margin-right: 400px; /* Adjust this value to move it horizontally */
+    background-color: #4a6fa5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 1000; /* Make sure it's on top */
+}
+
+    .add-event-btn:hover {
+        background-color: #3a5d85;
+    }
+
+.recent-slider-section {
+    margin-left: -780px;
+    margin-top: -240px;
+    width: 650px;
+    padding: 30px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #0d1b4c, #3a86ff, #a06cd5, #6a4c9c); /* Include the darker purple color */
+    background-size: 400% 400%; /* Stretch the gradient for animation */
+    color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    animation: gradientAnimation 10s ease infinite; /* Animation for the gradient */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.notification-bar {
+    width: 100%;
+    max-width: 1225px;
+    height: 60px; /* Increased for better spacing */
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between; /* Pushes left/right sections apart */
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 1000;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Even spacing between all items */
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+    .icon-button:hover {
+        color: #ddd;
+    }
+
+.nav-btn {
+    background-color: #ffffff;
+    color: #000080;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+    .nav-btn:hover {
+        background-color: #e6e6ff;
+    }
+    /* Light mode welcome-box hover fix */
+    .welcome-box:hover {
+        background-color: white !important; /* stay white on hover */
+    }
+
+/* Dark mode welcome-box hover fix */
+body.dark-theme .welcome-box:hover {
+    background-color: #1f2a3a !important; /* stay dark on hover */
+}
+
+

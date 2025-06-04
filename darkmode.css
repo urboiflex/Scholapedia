@@ -1,0 +1,997 @@
+﻿/* Body background pure black */
+body, .main-content {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+
+    /* Dark mode header styling */
+.dark-theme header.header {
+        background-color: #2f2f2f; /* dark gray background */
+        color: white; /* default text color white */
+    }
+
+.dark-theme header.header {
+    background-color: #333; /* dark gray header background */
+    color: white;
+}
+
+    /* Keep settings button gear icon blue */
+    .dark-theme header.header .settings-btn i {
+        color: #3399FF !important;
+    }
+
+    /* Keep hamburger lines blue */
+    .dark-theme header.header .hamburger-line {
+        background-color: #3399FF !important;
+    }
+
+    /* Other text inside header white */
+    .dark-theme header.header a,
+    .dark-theme header.header .user-name {
+        color: white !important;
+    }
+
+    /* Dropdown menu background and border */
+    .dark-theme header.header .dropdown-menu {
+        background-color: #2f2f2f;
+        border: 1px solid #444;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    }
+
+        /* Dropdown links white text and transparent bg */
+        .dark-theme header.header .dropdown-menu a {
+            color: white;
+            background-color: transparent;
+            padding: 8px 12px;
+            display: block;
+            text-decoration: none;
+        }
+
+            /* Dropdown hover */
+            .dark-theme header.header .dropdown-menu a:hover {
+                background-color: #444;
+                color: #ddd;
+            }
+
+
+
+/* Dark mode slider overlay - make it lighter and less opaque */
+.dark-theme .slider-wrapper .slide .overlay {
+    background-color: rgba(255, 255, 255, 0.15); /* lighter white overlay */
+    backdrop-filter: saturate(180%) blur(1px); /* nice glass effect */
+}
+
+/* Brighten subject labels */
+.dark-theme .slider-wrapper .subject-label {
+    color: #f0f8ff; /* very light blue-ish white */
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+}
+
+/* Brighten and style buttons */
+.dark-theme .slider-wrapper .view-button {
+    background-color: #3399FF; /* bright blue */
+    color: white;
+    border: none;
+    box-shadow: 0 0 8px #3399FFaa;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .dark-theme .slider-wrapper .view-button:hover {
+        background-color: #66b3ff;
+        box-shadow: 0 0 12px #66b3ffcc;
+    }
+
+
+
+
+
+
+
+
+/* Containers with less black background (dark gray) */
+.welcome-box, .welcome-content, .welcome-box-container, .calendar-container {
+    border: 2px solid #3399FF;
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3), 0 4px 8px rgba(255,255,255,0.1);
+    background-color: #222222 !important;
+}
+.welcome-box h1, .welcome-message,.sub-message {
+        color: #ffffff;
+    }
+    /* Buttons: dark background with white text */
+    .nav-button,
+    .view-button,
+    #yearSelector {
+        background-color: #222222 !important;
+        color: #ffffff !important;
+        border: 1px solid #555555 !important;
+    }
+
+
+
+/* Links or any interactive text (if any) */
+a {
+    color: #66ccff !important;
+}
+
+/* Event dots and calendar highlights: make them visible on dark */
+.event-dot {
+    background-color: #66ccff !important; /* bright blue dot */
+}
+
+.deadline-dot {
+    background-color: #ff5555 !important; /* red */
+}
+
+.meeting-dot {
+    background-color: #55ff55 !important; /* green */
+}
+
+.assessment-dot {
+    background-color: #ffaa00 !important; /* orange */
+}
+
+/* Calendar day headers and days */
+.calendar-day-header, .calendar-day {
+    color: #fff !important;
+}
+
+    /* Selected date highlight */
+    .calendar-day.selected {
+        background-color: #333333 !important;
+    }
+
+    /* Today highlight */
+    .calendar-day.today {
+        border: 1px solid #66ccff !important;
+    }
+
+/* Particle styling if needed */
+.particle {
+    background-color: #265af7;
+}
+
+/* Slider overlays */
+.slider-track .slide .overlay {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    color: #fff !important;
+}
+
+/* Chart Container */
+#chartContainer {
+    background-color: #1c1c1c !important;
+    border-color: #3399FF !important;
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3), 0 4px 8px rgba(255,255,255,0.1) !important;
+    color: #ffffff !important;
+}
+
+/* Scrollbars for overflow areas (optional) */
+.calendar-grid::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.calendar-grid::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 3px;
+}
+
+/* Header dark mode */
+.dark-theme .header {
+    background-color: #2f2f2f; /* dark gray background */
+    color: white; /* default text color white */
+}
+
+/* Logo image brightness */
+.dark-theme .logo img {
+    filter: brightness(0.8);
+}
+
+/* Header controls (buttons, icons) */
+.dark-theme .header-controls > div {
+    color: #ccc;
+}
+
+/* Dropdown menus dark style */
+.dark-mode .dropdown-menu {
+    background-color: #222;
+    border: 1px solid #444;
+    color: #ccc;
+}
+
+.dark-theme .dropdown-menu a {
+        color: #ccc;
+    }
+
+.dark-theme .dropdown-menu a:hover {
+            background-color: #333;
+        }
+
+/* Hamburger and settings icons */
+.dark-theme .hamburger-line {
+    background-color: #ccc;
+}
+
+/* User info */
+.dark-theme .user-info {
+    color: #eee;
+}
+
+
+
+
+/* Course cards */
+.dark-theme .course-card {
+    background-color: #1f1f1f;
+    border: 1px solid #333;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 12px; /* more rounded corners */
+    box-shadow: 0 0 10px rgba(0, 128, 255, 0.3); /* soft blue glow */
+}
+
+    /* Glowing text styles */
+/* Dark mode overrides */
+.dark-theme .course-card {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+}
+
+.dark-theme .course-mode {
+    box-shadow: none;
+    color: white;
+}
+
+.dark-theme .course-mode.synchronous {
+        background-color: #20bf6b;
+    }
+
+.dark-theme .course-mode.asynchronous {
+        background-color: #eb3b5a;
+    }
+
+.dark-theme .course-card h3,
+.dark-theme .course-info {
+    color: white;
+}
+
+.dark-theme .view-details-container {
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+}
+
+.dark-theme .view-details-btn {
+    background-color: #4b50e6;
+}
+
+    body.dark-theme .view-details-btn:hover {
+        background-color: #3c40c1;
+    }
+
+/*Edit Profile*/
+body.edit-profile-bg {
+    background: linear-gradient(-45deg, #0a0a0a, #1a1a1a, #2a2a2a, #1a1a1a);
+    background-size: 400% 400%;
+    animation: darkGradientBackground 15s ease infinite;
+    min-height: 100vh;
+}
+
+@keyframes darkGradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.dark-theme .edit-profile-container {
+    background: #1c1c1c;
+    border: 2px solid #00bfff;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+    color: #f0f0f0;
+}
+
+.dark-theme .profile-header h2 {
+    color: #00bfff;
+    text-shadow: 0 0 5px #00bfff, 0 0 10px #fff;
+}
+
+.dark-theme .form-group {
+    color: #f0f0f0;
+}
+
+.dark-theme .input-icon {
+    background: #2b2b2b;
+    box-shadow: inset 0 0 6px rgba(0, 191, 255, 0.1);
+    border-radius: 10px;
+}
+
+    .dark-theme .input-icon i {
+        color: #00bfff;
+        text-shadow: 0 0 5px #00bfff;
+    }
+
+.dark-theme .form-input {
+    color: #fff;
+}
+
+    .dark-theme .form-input::placeholder {
+        color: #bbb;
+    }
+
+.dark-theme .password-hint {
+    color: #aaa;
+}
+
+.dark-theme .btn-save {
+    background-color: #00bfff;
+    color: #fff;
+    box-shadow: 0 0 10px #00bfff;
+}
+
+    .dark-theme .btn-save:hover {
+        background-color: #009acd;
+        box-shadow: 0 0 15px #00bfff;
+    }
+
+.dark-theme .btn-cancel {
+    background-color: #2a2a2a;
+    color: #ccc;
+}
+
+    .dark-theme .btn-cancel:hover {
+        background-color: #3a3a3a;
+    }
+
+.dark-theme .message-label {
+    color: #00bfff;
+    text-shadow: 0 0 5px #00bfff;
+}
+
+.dark-theme .icon-selection {
+    color: #fff;
+}
+
+.dark-theme .current-icon {
+    border: 2px solid #00bfff;
+    box-shadow: 0 0 10px #00bfff;
+}
+
+.dark-theme .icon-choice {
+    border-color: #333;
+    background-color: #1a1a1a;
+}
+
+    .dark-theme .icon-choice:hover {
+        border-color: #00bfff;
+        box-shadow: 0 0 10px #00bfff;
+    }
+
+.dark-theme .back-button {
+    color: #00bfff;
+    text-shadow: 0 0 5px #00bfff;
+}
+
+    .dark-theme .back-button:hover {
+        color: #009acd;
+    }
+/* Add event*/
+
+
+.dark-theme .event-container {
+    background-color: #1e1e2f;
+    padding: 30px;
+    max-width: 500px;
+    margin: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(50, 50, 70, 0.8);
+    color: #e0e0ff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+    .dark-theme .event-container .form-control {
+        background-color: #2c2c3e;
+        border: 1px solid #505070;
+        color: #cfd0ff;
+        padding: 12px 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        font-size: 15px;
+        transition: border-color 0.3s ease;
+    }
+    .dark-theme .event-container .form {
+        background-color: #2c2c3e;
+    }
+
+    .dark-theme .event-container .form-control:focus {
+        border-color: #788cff;
+        outline: none;
+        box-shadow: 0 0 5px 2px rgba(120, 140, 255, 0.5);
+        background-color: #3a3a56;
+        color: #f0f0ff;
+    }
+
+    .dark-theme .event-container .btn-submit {
+        background-color: #4a5eff;
+        color: #fff;
+        padding: 12px 25px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 100%;
+        box-shadow: 0 4px 15px rgba(74, 94, 255, 0.7);
+    }
+
+        .dark-theme .event-container .btn-submit:hover {
+            background-color: #2f3cd6;
+        }
+
+    .dark-theme .event-container asp\\:DropDownList.form-control {
+        /* Some ASP.NET controls render differently, so add specificity */
+        background-color: #2c2c3e;
+        border: 1px solid #505070;
+        color: #cfd0ff;
+    }
+
+
+.dark-theme .calendar-day {
+    background-color: #222;
+    color: #00bfff;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+}
+
+
+@keyframes dark-theme-glowBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Course Details    */
+
+.dark-mode .body {
+    background-color: #121212;
+    color: #fff;
+}
+.dark-mode .container {
+    background: #1e1e1e;
+    color: #e0e0e0;
+    border-radius: 20px;
+    box-shadow: 0 10px 38px rgba(0, 0, 0, 0.4);
+    border: 1px solid #333;
+    position: relative;
+    min-height: 80vh;
+    padding: 32px 40px 40px 40px;
+}
+.dark-mode .breadcrumb {
+    max-width: 1140px;
+    margin: 12px auto 0 auto;
+    font-size: 14px;
+    color: #bbb; /* lighter gray for better contrast */
+    padding: 0 20px;
+}
+
+    .dark-mode .breadcrumb a {
+        color: #8a94ff; /* lighter bluish tone for links */
+        text-decoration: none;
+    }
+.dark-mode .course-title {
+    font-size: 2.45rem;
+    color: ##69b1fc
+    margin-bottom: 8px;
+    margin-top: 0;
+    text-align: left;
+    letter-spacing: 1.2px;
+}
+
+.dark-mode .course-img {
+    display: block;
+    margin: 0 0 24px 0;
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(60, 64, 193, 0.3); /* stronger shadow for dark bg */
+    border: 1.5px solid #555766; /* darker border */
+}
+
+.dark-mode .course-description {
+    font-size: 1.08rem;
+    line-height: 1.6;
+    color: #aaa; /* lighter gray */
+    padding-left: 18px;
+    border-left: 4px solid #8a8fff; /* softer blue */
+    margin-bottom: 10px;
+}
+
+.dark-mode .course-features {
+    flex: 1 1 295px;
+    max-width: 375px;
+    background: linear-gradient(100deg, #2a2f48 70%, #23263f 100%);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(60, 64, 193, 0.25);
+    border: 1.5px solid #44475a;
+    padding: 30px 32px 26px 32px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+    .dark-mode .course-features h3 {
+        font-size: 1.31rem;
+        text-align: center;
+        color: #8a8fff; /* soft blue */
+        margin-bottom: 16px;
+        letter-spacing: 0.8px;
+    }
+
+.dark-mode .feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    font-size: 16px;
+    gap: 12px;
+    background: #333a58; /* dark gray-blue */
+    padding: 10px 13px 10px 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #1a1f33;
+    color: #ccc;
+}
+
+    .dark-mode .feature:last-child {
+        margin-bottom: 0;
+    }
+
+    .dark-mode .feature i {
+        font-size: 20px;
+        color: #8a8fff; /* soft blue icon */
+        min-width: 24px;
+        margin-right: 6px;
+    }
+.dark-mode .flashcard-section {
+    margin-top: 40px;
+    padding: 20px;
+    background: #1e1e2f; /* dark bluish-gray */
+    border-radius: 12px;
+    font-size: 2.1rem;
+    color: #ffffff;
+
+}
+
+.dark-mode .deck {
+    margin-bottom: 40px;
+    font-size: 2.1rem;
+    color: #ffffff;
+
+}
+
+/* Deck header icon */
+.dark-mode .deck-icon {
+    font-size: 1.8rem;
+    color: #7a7aff; /* glowing blue */
+    margin-bottom: 12px;
+
+}
+
+.dark-mode .progress-bar-outer {
+    width: 100%;
+    height: 30px;
+    background-color: #2c2c3a; /* dark gray */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.dark-mode .progress-bar-inner {
+    height: 100%;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    width: 0%;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-weight: bold;
+    transition: width 0.5s ease-in-out;
+    border-radius: 20px 0 0 20px;
+    text-shadow: 0 0 6px #00c6ff;
+}
+
+.dark-mode .progress-text {
+    margin-top: 5px;
+    font-size: 18px;
+    color: #ccc;
+    font-weight: bold;
+
+}
+
+.dark-mode .test-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1f1f2e;
+    margin-bottom: 16px;
+    padding: 18px 22px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #0008;
+}
+
+.dark-mode .test-title {
+    font-size: 1.14rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 6px #7a7aff;
+}
+
+    .dark-mode .test-title i {
+        margin-right: 10px;
+    }
+
+.dark-mode .test-duration {
+    font-weight: 400;
+    font-size: 0.98rem;
+    color: #a3a3c2;
+    margin-left: 12px;
+}
+
+.dark-mode .btn-take-test {
+    background: linear-gradient(90deg, #3c40c1 60%, #6658ea 100%);
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 10px 26px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px #3c40c1bb;
+    text-decoration: none;
+    transition: background 0.15s;
+}
+
+    .dark-mode .btn-take-test:hover {
+        background: linear-gradient(90deg, #5a5cff 80%, #8a7efe 100%);
+    }
+.dark-mode .resources-box {
+    background-color: #1e1e2a;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+    color: #fff;
+}
+
+    .dark-mode .resources-box h2 {
+        color: #fff;
+
+        margin-bottom: 0;
+    }
+
+/* Light mode */
+.dark-mode .course-test-heading {
+    color: #fff;
+    margin-bottom: 0;
+}
+
+/* Dark mode */
+.dark-mode .course-test-heading {
+    color: #fff;
+
+}
+/*Discussion forum*/
+
+.dark-mode .forum-container {
+    background: rgba(36, 44, 62, 0.98) !important;
+    color: #dbeafe !important;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.38);
+}
+
+.dark-mode .header {
+    border-bottom: 2px solid #2e3850;
+}
+
+    .dark-mode .header h1 {
+        color: #90caf9 !important;
+    }
+
+.dark-mode .subject-dropdown {
+    background-color: #232b3e !important;
+    color: #90caf9 !important;
+    border: 1px solid #3949ab !important;
+}
+
+    body.dark-mode .subject-dropdown:focus {
+        border-color: #64b5f6 !important;
+    }
+
+.dark-mode .add-question-btn {
+    background: linear-gradient(to right, #64b5f6, #1976d2) !important;
+    color: #232b3e !important;
+    box-shadow: 0 4px 14px rgba(100,181,246,0.22);
+}
+
+    .dark-mode .add-question-btn:hover {
+        background: linear-gradient(to right, #1976d2, #3949ab) !important;
+        color: #fff !important;
+    }
+
+.dark-mode .questions-list {
+    color: #dbeafe !important;
+}
+
+.dark-mode .question-item {
+    background: #232b3e !important;
+    border-left: 4px solid #64b5f6 !important;
+    color: #dbeafe !important;
+}
+
+    .dark-mode .question-item.teacher {
+        border-left: 4px solid #ff6f6f !important;
+        background: #232b3e !important;
+    }
+
+    .dark-mode .question-item:hover {
+        background: #27304a !important;
+    }
+
+.dark-mode .question-title {
+    color: #90caf9 !important;
+}
+
+.dark-mode .question-meta {
+    color: #b0bec5 !important;
+}
+
+.dark-mode .no-questions {
+    color: #8aacc8 !important;
+}
+
+.dark-mode .reply-count i {
+    color: #64b5f6 !important;
+}
+
+.dark-mode .best-answer-tag {
+    background-color: #64b5f6 !important;
+    color: #232b3e !important;
+}
+
+.dark-mode a {
+    color: #90caf9 !important;
+}
+
+    .dark-mode a:hover {
+        color: #fff !important;
+    }
+
+.dark-mode .back-button {
+    color: #64b5f6 !important;
+}
+
+    .dark-mode .back-button:hover {
+        color: #fff !important;
+    }
+
+/*Create Question*/
+.dark-mode .container {
+    background: #212734 !important;
+    color: #e3f2fd !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+}
+
+.dark-mode h1 {
+    color: #90caf9 !important;
+    border-bottom: 2px solid #3949ab !important;
+}
+
+.dark-mode .form-group label {
+    color: #90caf9 !important;
+}
+
+.dark-mode .form-group input[type="text"],
+.dark-mode .form-group textarea {
+    background: #232b3e !important;
+    color: #e3f2fd !important;
+    border-color: #3949ab !important;
+}
+
+    .dark-mode .form-group input[type="text"]:focus,
+   .dark-mode .form-group textarea:focus {
+        border-color: #64b5f6 !important;
+        box-shadow: 0 0 0 3px rgba(100,181,246,0.19) !important;
+    }
+
+.dark-mode .subject-info {
+    background: #232b3e !important;
+    color: #90caf9 !important;
+    border-left: 5px solid #64b5f6 !important;
+}
+
+.dark-mode .btn-primary {
+    background: #64b5f6 !important;
+    color: #232b3e !important;
+    box-shadow: 0 4px 12px rgba(100,181,246,0.25);
+}
+
+    .dark-mode .btn-primary:hover {
+        background: #1976d2 !important;
+        color: #fff !important;
+    }
+
+.dark-mode .btn-secondary {
+    background: #232b3e !important;
+    color: #64b5f6 !important;
+    border: 1px solid #3949ab !important;
+}
+
+    .dark-mode .btn-secondary:hover {
+        background: #3949ab !important;
+        color: #fff !important;
+    }
+
+
+/*question detail*/
+.dark-mode .container {
+    background: #23263a;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.dark-mode .question-title {
+    color: #59bbff;
+}
+
+.dark-mode .question-meta,
+.dark-mode .reply-meta {
+    color: #c8ccd6;
+}
+
+.dark-mode .question-content {
+    color: #e5e7eb;
+}
+
+.dark-mode .replies h3 {
+    color: #93c5fd;
+}
+
+.dark-mode .reply {
+    border: 1px solid #323651;
+    background-color: #24263b;
+}
+
+    .dark-mode .reply.best {
+        border-left: 6px solid #3faeeb;
+        background-color: #1f2338;
+    }
+
+    .dark-mode .reply.teacher {
+        border-color: #f25a71 !important;
+        background: #2a2e47;
+    }
+
+.dark-mode .reply-form {
+    background-color: #23263a;
+}
+
+.dark-mode .form-group textarea,
+.dark-mode .form-control {
+    background-color: #323651;
+    color: #e5e7eb;
+    border: 1px solid #44486a;
+}
+
+.dark-mode .btn-like,
+.dark-mode .btn-edit,
+.dark-mode .btn-delete,
+.dark-mode .btn-best {
+    color: #4fc3f7;
+}
+
+    .dark-mode .btn-like.liked {
+        color: #81d4fa;
+    }
+
+.dark-mode .btn-best {
+    background-color: #4fc3f7;
+    color: #181a22;
+}
+
+    .dark-mode .btn-best:hover {
+        background-color: #0288d1;
+        color: #fff;
+    }
+
+.dark-mode .btn-submit {
+    background-color: #0288d1;
+    color: #fff;
+}
+
+    .dark-mode .btn-submit:hover {
+        background-color: #01579b;
+    }
+
+.dark-mode .best-tag {
+    background: #4fc3f7;
+    color: #23263a;
+}
+
+.dark-mode .nested-reply {
+    border-left: 3px solid #3faeeb;
+}
+
+/*test*/
+.dark-mode .preview-container {
+    background: #23263a;
+    box-shadow: 0 8px 30px #0e101a70;
+}
+.dark-mode .preview-header {
+    color: #59bbff;
+}
+
+.dark-mode .test-instructions {
+    color: #b8c8e1;
+}
+
+.dark-mode .progress-bar-outer {
+    background: #323651;
+    box-shadow: 0 2px 8px #181a2260;
+}
+
+.dark-mode .progress-bar-inner {
+    background: linear-gradient(90deg, #59bbff 60%, #3c40c1 100%);
+    color: #23263a;
+}
+
+.dark-mode .timer-countdown {
+    color: #ff7c7c;
+}
+
+.dark-mode .preview-question {
+    background: #1f2338;
+    box-shadow: 0 2px 8px #23263a60;
+}
+
+    .dark-mode .preview-question .q-title,
+    .dark-mode .preview-question label {
+        color: #b8c8e1;
+    }
+
+    .dark-mode .preview-question input[type='text'],
+    .dark-mode .preview-question textarea {
+        background: #23263a;
+        color: #e5e7eb;
+        border: 1.3px solid #44486a;
+    }
+
+.dark-mode .preview-submit-btn {
+    background: #59bbff;
+    color: #23263a;
+}
+
+    .dark-mode .preview-submit-btn:hover {
+        background: #0288d1;
+        color: #fff;
+    }
+
+.dark-mode .result-panel {
+    background: #263d21;
+    color: #13ff60;
+    border-color: #39e58a;
+}
+
+.dark-mode .back-to-test-btn {
+    background: #59bbff;
+    color: #23263a;
+}
+
+    .dark-mode .back-to-test-btn:hover {
+        background: #0288d1;
+        color: #fff;
+    }
